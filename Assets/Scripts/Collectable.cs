@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    public PowerType power;
+    public CardStack cardStack;
 
     private void OnDestroy()
     {
-        Debug.Log("Jeg er fucking død");
+        Debug.Log("TilfÃ¸jer " + power + " til kortstakken");
+        cardStack.Add(power);
     }
-
 }
