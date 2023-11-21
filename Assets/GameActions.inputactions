@@ -109,7 +109,7 @@
             "id": "68764897-86ff-4ab3-84eb-74f0745fa30e",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "PauseMenu",
                     "type": "Button",
                     "id": "d4332d64-7ac5-4bd9-a3ad-63b9ee7033ad",
                     "expectedControlType": "Button",
@@ -122,11 +122,11 @@
                 {
                     "name": "",
                     "id": "1b2c3b5c-9241-4332-9d0e-04374d3047eb",
-                    "path": "",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

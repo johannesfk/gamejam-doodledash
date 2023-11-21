@@ -1,0 +1,68 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
+using System.Linq;
+
+
+public enum PowerType
+{
+    Dash,
+    DoubleJump,
+    WallJump,
+    Bounce,
+    Teleport
+}
+
+public class CardStack : MonoBehaviour
+{
+    public void Add(PowerType power)
+    {
+        cards.Insert(1, new Card(power));
+    }
+    public void Use()
+    {
+        cards.RemoveAt(0);
+    }
+    public List<Card> cards;
+
+
+    void Start()
+    {
+        Debug.Log(cards.Count);
+    }
+}
+
+[Serializable]
+public class Card
+{
+    public PowerType power;
+    public Color color;
+    public Card(PowerType power)
+    {
+        this.power = power;
+    }
+}
+
+
+// PowerDrawerUIE
+[CustomPropertyDrawer(typeof(Card))]
+public class DrawerUIE : PropertyDrawer
+{
+    public override VisualElement CreatePropertyGUI(SerializedProperty property)
+    {
+        // Create property container element.
+        var container = new VisualElement();
+
+        // Create property fields.
+        var typeField = new PropertyField(property.FindPropertyRelative("power"), "Card Power");
+        // Add fields to the container.
+        container.Add(typeField);
+
+        return container;
+    }
+}
