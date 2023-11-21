@@ -14,4 +14,4 @@ _AAU MED1 P1 project_.
 
 ## Project roles
 
-- Art Director @AstroGH
+- Art Director [AstroGH](https://github.com/AstroGH)
