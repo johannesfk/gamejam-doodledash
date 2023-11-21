@@ -15,4 +15,15 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    bool GameHasEnded = false;
+    public GameObject GameOverBackground;
+    public void RestartGame()
+    {
+        if (GameHasEnded == true)
+        {
+            GameHasEnded = false;
+            GameOverBackground.SetActive(false);
+            Debug.Log("New Game");
+        }
+    }
 }
