@@ -8,13 +8,21 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
+
+    [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float timer;
 
     public GameObject pauseScreen;
 
 
-
+    private void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +30,13 @@ public class GameManager : MonoBehaviour
         pauseScreen.SetActive(false);
     }
 
+
+
     private void FixedUpdate()
     {
        timer += Time.fixedDeltaTime;
+       PlayerPrefs.SetFloat("HighScore", timer);
+       PlayerPrefs.GetFloat("HighScore");
     }
 
 
@@ -42,6 +54,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Debug.Log("Game is paused");
         pauseScreen.SetActive(true);
+
     }
 
     public void Resume()
@@ -53,9 +66,30 @@ public class GameManager : MonoBehaviour
 
     public void OnPauseMenu(InputValue button)
     {
-        Pause();
+        //Pause();
         Debug.Log("hotkey: pause");
-       
+       EndLevel();
+
+    }
+
+    public void EndLevel()
+    {
+        Pause();
+        //EndScreen.setactive(true);
+        
+;
+        CheckHighScore();
+        highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
+  
+
+    }
+
+    void CheckHighScore()
+    {
+        if (timer > PlayerPrefs.GetFloat("HighScore"))
+        {
+            PlayerPrefs.SetFloat("HighScore", timer);
+        }
 
     }
 
