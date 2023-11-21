@@ -269,10 +269,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 940548409}
-  - component: {fileID: 940548408}
+  - component: {fileID: 940548412}
   - component: {fileID: 940548411}
   - component: {fileID: 940548410}
-  - component: {fileID: 940548412}
+  - component: {fileID: 940548408}
   - component: {fileID: 940548413}
   m_Layer: 0
   m_Name: Player
@@ -432,12 +432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7086a99443126fc47947e44f9bbb2873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  speed: 0
-  minSpeed: 0.5
-  maxSpeed: 10
-  acceleration: 0.5
-  jumpSpeed: 6
+  speed: 1
+  minSpeed: 1
+  maxSpeed: 5
+  acceleration: 0.8
+  jumpSpeed: 8
 --- !u!114 &940548413
 MonoBehaviour:
   m_ObjectHideFlags: 0
