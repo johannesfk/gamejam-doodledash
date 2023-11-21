@@ -32,4 +32,4 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(levelName);
         Debug.Log("Loading " + levelName);
     }
-}
+}   
