@@ -10,3 +10,8 @@ _AAU MED1 P1 project_.
 4. Change branch to develop
 5. Open Unity Hub, click the Open button and select the folder you cloned the repository into.
 6. Open the project.
+
+
+## Project roles
+
+- Art Director @AstroGH
