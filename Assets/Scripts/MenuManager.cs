@@ -15,15 +15,21 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Game Quit");
     }
-    public void RestartButton()
+    public void RestartCurrentLevel()
     {
-        SceneManager.LoadScene("Game Screen");
-        FindObjectOfType<GameManager>().RestartGame();
-        Debug.Log("Reloading New Game");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+        Debug.Log("Restarting " + currentScene.name);
     }
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
         Debug.Log("Loading Menu");
+    }
+    public void SelectLevel(int level)
+    {
+        string levelName = "Level " + level;
+        SceneManager.LoadScene(levelName);
+        Debug.Log("Loading " + levelName);
     }
 }
