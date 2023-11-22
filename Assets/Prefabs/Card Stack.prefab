@@ -71,3 +71,8 @@ MonoBehaviour:
   wallJumpColor: {r: 0.93333334, g: 0.6, b: 0.39607844, a: 1}
   bounceColor: {r: 0.5058824, g: 0.9607843, b: 0.3764706, a: 1}
   teleportColor: {r: 0.92156863, g: 0.43137255, b: 0.9764706, a: 1}
+  dashSprite: {fileID: 0}
+  doubleJumpSprite: {fileID: 0}
+  wallJumpSprite: {fileID: 0}
+  bounceSprite: {fileID: 0}
+  teleportSprite: {fileID: 0}
