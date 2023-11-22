@@ -26,7 +26,11 @@ public class CardStack : MonoBehaviour
     }
     public void Use()
     {
-        cards.RemoveAt(0);
+        if (cards.Count > 0)
+        {
+            cards.RemoveAt(0);
+        }
+        
     }
     public List<Card> cards;
 
