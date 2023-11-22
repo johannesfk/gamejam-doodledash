@@ -44,6 +44,15 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UsePowerUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c14ef58-2ada-4687-bcda-0dd75dba3e3d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -189,6 +198,28 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bfd459ba-5f42-485c-ad05-fa9f227140d6"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsePowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""914a8d9f-ae03-447e-9c75-53704dae49b1"",
+                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsePowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -288,6 +319,7 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Movement = m_Movement.FindAction("Movement", throwIfNotFound: true);
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
+        m_Movement_UsePowerUp = m_Movement.FindAction("UsePowerUp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PauseMenu = m_UI.FindAction("PauseMenu", throwIfNotFound: true);
@@ -354,12 +386,14 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_Movement;
     private readonly InputAction m_Movement_Jump;
+    private readonly InputAction m_Movement_UsePowerUp;
     public struct MovementActions
     {
         private @GameActions m_Wrapper;
         public MovementActions(@GameActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Movement_Movement;
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
+        public InputAction @UsePowerUp => m_Wrapper.m_Movement_UsePowerUp;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -375,6 +409,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @UsePowerUp.started += instance.OnUsePowerUp;
+            @UsePowerUp.performed += instance.OnUsePowerUp;
+            @UsePowerUp.canceled += instance.OnUsePowerUp;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -385,6 +422,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @UsePowerUp.started -= instance.OnUsePowerUp;
+            @UsePowerUp.performed -= instance.OnUsePowerUp;
+            @UsePowerUp.canceled -= instance.OnUsePowerUp;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -497,6 +537,7 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnUsePowerUp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

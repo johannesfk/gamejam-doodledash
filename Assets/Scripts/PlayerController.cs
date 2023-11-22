@@ -14,28 +14,42 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    public CardStack cardStack;
+
     [Header("GroundedMovement")]
-    [SerializeField] private float speed = 8;
-    [SerializeField] private float speedPower = 1f;
-    [SerializeField] private float acceleration = 13f;
-    [SerializeField] private float decceleration = 16f;
+    [SerializeField] private float speed = 15;
+    [SerializeField] private float speedPower = 0.9f;
+    [SerializeField] private float acceleration = 4f;
+    [SerializeField] private float decceleration = 12f;
 
     [Header("Jump Settings")]
-    [SerializeField] private float jumpForce = 15;
-    [SerializeField] private float fallGravity = 2;
-    [SerializeField] private float jumpBuffer = 0.2f;
+    [SerializeField] private float jumpForce = 12;
+    [SerializeField] private float fallGravity = 4;
+    [SerializeField] private float jumpBuffer = 0.1f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
     [SerializeField] private float jumpCutWindow = 1f;
     [SerializeField] private float coyoteTimeWindow = 0.05f;
     private float jumpBufferTimer;
     private float coyoteTimeTimer;
     private float gravityScale = 1;
-
     private float jumpCutTimer;
     private bool jumpCutted = false;
-
     private bool isGrounded;
     private bool isJumping;
+
+    [Header("PowerUp Settings")]
+    [SerializeField] private float wallJumpXmultiplier = 15;
+    [SerializeField] private float dashSpeed = 100;
+    [SerializeField] private float dashAngleMultiplier = 0.3f;
+    [SerializeField] private float bounceMultiplier = 1.2f;
+    [SerializeField] private GameObject tpPosition;
+    [SerializeField] private float tpPositionMultiplier = 5;
+
+    private bool touchingWall = false;
+    private bool bounceActivated = false;
+    private float bouncePower;
+    private PowerType nextPower;
+    private Vector3 wallPos;
 
     private void Awake()
     {
@@ -119,6 +133,36 @@ public class PlayerController : MonoBehaviour
         {
             coyoteTimeTimer -= Time.fixedDeltaTime;
         }
+
+        //PowerUps
+        if (cardStack.cards.Count > 0)
+        {
+            nextPower = cardStack.cards[0].power;
+        }
+
+        if (bounceActivated)
+        {
+            if (!isGrounded)
+            {
+                bouncePower = Mathf.Abs(rb.velocity.y);
+            }
+            
+            if (isGrounded) 
+            {
+                rb.AddForce(Vector2.up * bouncePower * bounceMultiplier, ForceMode2D.Impulse);
+                bounceActivated = false;
+                Debug.Log(bouncePower);
+            }
+
+
+        }
+
+        if (movement.x != 0)
+        {
+            tpPosition.transform.position = rb.position + movement * tpPositionMultiplier;
+        }
+
+
         if (hasWon == true)
         {
             Debug.Log("Du har vundet!");
@@ -178,6 +222,76 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnUsePowerUp()
+    {
+        if (cardStack.cards.Count > 0)
+        {
+            switch (nextPower)
+            {
+                case PowerType.Dash:
+                    
+                    if (movement.x != 0)
+                    {
+                        Debug.Log("DASH MOVE");
+
+                        rb.AddForce(Vector2.right * movement * dashSpeed + Vector2.up * dashAngleMultiplier, ForceMode2D.Impulse);
+
+                        cardStack.Use();
+                    }
+                    
+
+                break;
+
+                case PowerType.DoubleJump:
+                    if (!isGrounded && isJumping)
+                    {
+                        Debug.Log("DOUBLE JUMP MOVE");
+                        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                        cardStack.Use();
+
+                    }
+                break;
+
+                case PowerType.WallJump:
+
+                    if (touchingWall)
+                    {
+                        Debug.Log("WALL JUMP MOVE");
+
+                        float wallJumpXDirection = Mathf.Sign(gameObject.transform.position.x - wallPos.x);
+
+                        rb.AddForce(Vector2.up * jumpForce + Vector2.right * wallJumpXDirection * wallJumpXmultiplier, ForceMode2D.Impulse);
+
+                        cardStack.Use();
+                    }
+
+                break;
+
+                case PowerType.Teleport:
+                    Debug.Log("TP MOVE");
+
+                    transform.position = tpPosition.transform.position;
+                    cardStack.Use();
+
+
+                break;
+
+                case PowerType.Bounce:
+                    
+                    if (!isGrounded)
+                    {
+                        Debug.Log("BOUNCE MOVE");
+
+                        bounceActivated = true;
+                        cardStack.Use();
+                    }
+
+                break;
+            }
+
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -193,7 +307,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            Debug.Log("V�g Moment");
+            touchingWall = true;
+
+            wallPos = collision.transform.position;
+
+
+            Debug.Log("Væg Moment");
         }
     }
 
@@ -210,6 +329,12 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            touchingWall = false;
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
