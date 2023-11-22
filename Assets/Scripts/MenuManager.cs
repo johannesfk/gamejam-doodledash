@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+
+    public static MenuManager Instance;
+    public string levelName;
+
+    private void Awake()
+    {
+        Instance = this; 
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -28,7 +37,7 @@ public class MenuManager : MonoBehaviour
     }
     public void SelectLevel(int level)
     {
-        string levelName = "Level " + level;
+        levelName = "Level " + level;
         SceneManager.LoadScene(levelName);
         Debug.Log("Loading " + levelName);
     }

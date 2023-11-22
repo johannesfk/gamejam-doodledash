@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
         playerControls = new GameActions();
         jumpAction = playerControls.Movement.Jump;
     }
+    private bool hasWon = false;
+
 
     private void OnEnable()
     {
@@ -71,7 +73,6 @@ public class PlayerController : MonoBehaviour
     {
         gravityScale = rb.gravityScale;
         isJumping = false;
-
     }
 
     private void FixedUpdate()
@@ -84,14 +85,16 @@ public class PlayerController : MonoBehaviour
         //Calculating the speed we are going and speed we want to be
         float speedDif = nextMove - rb.velocity.x;
 
-        //calculating our accelarition/decceleration rate
-            //Mathf.Abs returns an absolute meaning it cant be negative
-            //not sure about the "?"
+        /// Calculating our accelarition/decceleration rate
+        /// Mathf.Abs returns an absolute meaning it cant be negative
+        /// not sure about the "?"
+        /// That one is a ternary operator it works like this
+        /// (condition) ? (if true) : (if false)
         float accelerationRate = (Mathf.Abs(nextMove) > 0) ? acceleration : decceleration;
 
         //Calculation The characters movement itself
-            // Mathf.Sign returns a value of 1 or -1 to indicate the direction being right or left
-            // Mathf.Pow Means to the power of something this is needed since its an acceleration and we want it to be smooth
+        // Mathf.Sign returns a value of 1 or -1 to indicate the direction being right or left
+        // Mathf.Pow Means to the power of something this is needed since its an acceleration and we want it to be smooth
         float moveAction = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRate, speedPower) * Mathf.Sign(speedDif);
 
         rb.AddForce(moveAction * Vector2.right);
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (jumpBufferTimer > 0)
-        {   
+        {
             jumpBufferTimer -= Time.fixedDeltaTime;
             if (isGrounded)
             {
@@ -115,7 +118,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("JUMP BUFFERED");
                 isJumping = true;
                 isGrounded = false;
-                   
+
             }
         }
 
@@ -158,6 +161,10 @@ public class PlayerController : MonoBehaviour
         }
 
 
+        if (hasWon == true)
+        {
+            Debug.Log("Du har vundet!");
+        }
     }
 
     private void OnMovement(InputValue input)
@@ -166,7 +173,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnJump(InputValue buttonPress)
-    {   
+    {
         //Jumping
         if (isGrounded)
         {
@@ -179,7 +186,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         else if (isGrounded == false)
-        {   
+        {
             if (coyoteTimeTimer > 0)
             {
                 Debug.Log("COYOTE JUMP MOVE");
@@ -277,7 +284,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
             isJumping = false;
@@ -294,12 +301,13 @@ public class PlayerController : MonoBehaviour
             wallPos = collision.transform.position;
 
 
+            Debug.Log("Væg Moment");
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
             jumpCutted = false;
@@ -320,10 +328,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Collectable")
+        if (collision.gameObject.CompareTag("Collectable"))
         {
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Exit"))
+        {
+            if (Collectables.allCollected)
+            {
+                Debug.Log("Du har vundet!");
+            }
+        }
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Exit"))
+        {
+            if (Collectables.allCollected)
+            {
+                hasWon = true; // To prevent multiple win states - Debounce
+            }
+        }
+    }
 }

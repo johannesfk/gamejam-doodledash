@@ -33,12 +33,6 @@ public class CardStack : MonoBehaviour
         
     }
     public List<Card> cards;
-
-
-    /* void Start()
-    {
-        Debug.Log(cards.Count);
-    } */
 }
 
 [Serializable]
