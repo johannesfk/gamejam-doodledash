@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public Animator transition;
 
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI timerText;
@@ -65,9 +66,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPauseMenu(InputValue button)
     {
-        //Pause();
+        Pause();
         Debug.Log("hotkey: pause");
-       EndLevel();
+        //transition.SetTrigger("Start");
 
     }
 
@@ -78,7 +79,8 @@ public class GameManager : MonoBehaviour
         
 ;
         CheckHighScore();
-        highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
+        //highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
+        
 
     }
 
