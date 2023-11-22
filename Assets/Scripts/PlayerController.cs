@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    public ParticleSystem dust;
+
     private GameActions playerControls;
     private InputAction jumpAction;
     private Rigidbody2D rb;
@@ -170,6 +172,13 @@ public class PlayerController : MonoBehaviour
     private void OnMovement(InputValue input)
     {
         movement = input.Get<Vector2>();
+       
+        
+        if (isGrounded)
+        {
+            CreateDust();
+        }
+            
     }
 
     private void OnJump(InputValue buttonPress)
@@ -182,6 +191,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                CreateDust();
                 isGrounded = false;
             }
         }
@@ -287,6 +297,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            CreateDust();
             isJumping = false;
             jumpCutted = false;
         }
@@ -350,4 +361,12 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    void CreateDust()
+    {
+        dust.Play();
+    }
+
+
+
 }
