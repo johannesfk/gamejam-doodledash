@@ -15,11 +15,19 @@ public class CardCollectableCard : MonoBehaviour
     {
         cardStyles = cardStack.GetComponentInParent<CardStyles>();
 
-        Color cardColor = cardStyles.cardColors[power];
-        Sprite cardSprite = cardStyles.cardSprites[power];
+        if (cardStyles.cardColors != null)
+        {
+            Color cardColor = cardStyles.cardColors[power];
+            GetComponent<SpriteRenderer>().color = cardColor;
+        }
 
-        GetComponent<SpriteRenderer>().color = cardColor;
-        GetComponent<SpriteRenderer>().sprite = cardSprite;
+        if (cardStyles.cardSprites != null)
+        {
+            Sprite cardSprite = cardStyles.cardSprites[power];
+            GetComponent<SpriteRenderer>().sprite = cardSprite;
+        }
+
+
     }
 
     private void OnDestroy()

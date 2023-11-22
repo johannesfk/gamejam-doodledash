@@ -29,12 +29,6 @@ public class CardStack : MonoBehaviour
         cards.RemoveAt(0);
     }
     public List<Card> cards;
-
-
-    /* void Start()
-    {
-        Debug.Log(cards.Count);
-    } */
 }
 
 [Serializable]
