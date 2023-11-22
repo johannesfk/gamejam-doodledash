@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    private GameActions playerControls;
+    private InputAction jumpAction;
     private Rigidbody2D rb;
     private Vector2 movement;
 
@@ -21,23 +23,39 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fallGravity = 2;
     [SerializeField] private float jumpBuffer = 0.2f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
+    [SerializeField] private float jumpCutWindow = 1f;
+    [SerializeField] private float coyoteTimeWindow = 0.05f;
     private float jumpBufferTimer;
+    private float coyoteTimeTimer;
     private float gravityScale = 1;
-    
+
+    private float jumpCutTimer;
     private bool jumpCutted = false;
 
     private bool isGrounded;
     private bool isJumping;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        playerControls = new GameActions();
+        jumpAction = playerControls.Movement.Jump;
+    }
 
+    private void OnEnable()
+    {
+        playerControls.Enable();
+        jumpAction.canceled += Jump;
+    }
+    private void OnDisable()
+    {
+        playerControls.Disable();
+        jumpAction.canceled -= Jump;
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
         gravityScale = rb.gravityScale;
-        Debug.Log(gravityScale);
-
         isJumping = false;
 
     }
@@ -74,18 +92,30 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = gravityScale;
         }
 
-            if (jumpBufferTimer > 0)
-            {   
-                 jumpBufferTimer -= Time.fixedDeltaTime;
-                 if (isGrounded)
-                 {
-                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    Debug.Log("JUMP BUFFERED");
-                    isJumping = true;
-                    isGrounded = false;
-                    
-                 }
+        if (jumpBufferTimer > 0)
+        {   
+            jumpBufferTimer -= Time.fixedDeltaTime;
+            if (isGrounded)
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                Debug.Log("JUMP BUFFERED");
+                isJumping = true;
+                isGrounded = false;
+                   
             }
+        }
+
+        if (jumpCutTimer > 0)
+        {
+            jumpCutTimer -= Time.fixedDeltaTime;
+        }
+
+        if (coyoteTimeTimer > 0)
+        {
+            coyoteTimeTimer -= Time.fixedDeltaTime;
+        }
+
+
 
     }
 
@@ -99,22 +129,39 @@ public class PlayerController : MonoBehaviour
         //Jumping
         if (isGrounded)
         {
-            isJumping = true;
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
+            if (!isJumping)
+            {
+                jumpCutTimer = jumpCutWindow;
+                isJumping = true;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                isGrounded = false;
+            }
         }
         else if (isGrounded == false)
         {   
+            if (coyoteTimeTimer > 0)
+            {
+                Debug.Log("COYOTE JUMP MOVE");
+                jumpCutTimer = jumpCutWindow;
+                isJumping = true;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
             jumpBufferTimer = jumpBuffer;
         }
 
-        //if (buttonPress.canceled)
-        //{
-            //Debug.Log("JumpCutShort");
-            //jumpCutted = true;
-            //rb.AddForce(Vector2.down * rb.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
-        //}
+    }
 
+    private void Jump(InputAction.CallbackContext context)
+    {
+        if (jumpCutted == false)
+        {
+            if (rb.velocity.y > 0 && jumpCutTimer > 0)
+            {
+                jumpCutted = true;
+                Debug.Log("JumpCutted");
+                rb.AddForce(Vector2.down * rb.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -127,12 +174,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("Væg Moment");
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
             jumpCutted = false;
+
+            if (isJumping == false)
+            {
+                coyoteTimeTimer = coyoteTimeWindow;
+            }
+
         }
     }
 
