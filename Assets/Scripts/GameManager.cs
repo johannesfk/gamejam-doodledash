@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float timer;
+    public float timer;
 
     public GameObject pauseScreen;
 
@@ -35,8 +35,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
        timer += Time.fixedDeltaTime;
-       PlayerPrefs.SetFloat("HighScore", timer);
-       PlayerPrefs.GetFloat("HighScore");
+       
     }
 
 
@@ -80,15 +79,14 @@ public class GameManager : MonoBehaviour
 ;
         CheckHighScore();
         highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
-  
 
     }
 
     void CheckHighScore()
     {
-        if (timer > PlayerPrefs.GetFloat("HighScore"))
+        if (timer < PlayerPrefs.GetFloat("HighScore" + MenuManager.Instance.levelName , 0))
         {
-            PlayerPrefs.SetFloat("HighScore", timer);
+            PlayerPrefs.SetFloat("HighScore" + MenuManager.Instance.levelName, timer);
         }
 
     }

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    private GameActions playerControls;
+    private InputAction jumpAction;
     private Rigidbody2D rb;
     private Vector2 movement;
 
@@ -21,25 +23,42 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fallGravity = 2;
     [SerializeField] private float jumpBuffer = 0.2f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
+    [SerializeField] private float jumpCutWindow = 1f;
+    [SerializeField] private float coyoteTimeWindow = 0.05f;
     private float jumpBufferTimer;
+    private float coyoteTimeTimer;
     private float gravityScale = 1;
-    
+
+    private float jumpCutTimer;
     private bool jumpCutted = false;
 
     private bool isGrounded;
     private bool isJumping;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        playerControls = new GameActions();
+        jumpAction = playerControls.Movement.Jump;
+    }
+    private bool hasWon = false;
 
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+        jumpAction.canceled += Jump;
+    }
+    private void OnDisable()
+    {
+        playerControls.Disable();
+        jumpAction.canceled -= Jump;
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
         gravityScale = rb.gravityScale;
-        Debug.Log(gravityScale);
-
         isJumping = false;
-
     }
 
     private void FixedUpdate()
@@ -52,14 +71,16 @@ public class PlayerController : MonoBehaviour
         //Calculating the speed we are going and speed we want to be
         float speedDif = nextMove - rb.velocity.x;
 
-        //calculating our accelarition/decceleration rate
-            //Mathf.Abs returns an absolute meaning it cant be negative
-            //not sure about the "?"
+        /// Calculating our accelarition/decceleration rate
+        /// Mathf.Abs returns an absolute meaning it cant be negative
+        /// not sure about the "?"
+        /// That one is a ternary operator it works like this
+        /// (condition) ? (if true) : (if false)
         float accelerationRate = (Mathf.Abs(nextMove) > 0) ? acceleration : decceleration;
 
         //Calculation The characters movement itself
-            // Mathf.Sign returns a value of 1 or -1 to indicate the direction being right or left
-            // Mathf.Pow Means to the power of something this is needed since its an acceleration and we want it to be smooth
+        // Mathf.Sign returns a value of 1 or -1 to indicate the direction being right or left
+        // Mathf.Pow Means to the power of something this is needed since its an acceleration and we want it to be smooth
         float moveAction = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRate, speedPower) * Mathf.Sign(speedDif);
 
         rb.AddForce(moveAction * Vector2.right);
@@ -74,19 +95,32 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = gravityScale;
         }
 
-            if (jumpBufferTimer > 0)
-            {   
-                 jumpBufferTimer -= Time.fixedDeltaTime;
-                 if (isGrounded)
-                 {
-                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    Debug.Log("JUMP BUFFERED");
-                    isJumping = true;
-                    isGrounded = false;
-                    
-                 }
-            }
+        if (jumpBufferTimer > 0)
+        {
+            jumpBufferTimer -= Time.fixedDeltaTime;
+            if (isGrounded)
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                Debug.Log("JUMP BUFFERED");
+                isJumping = true;
+                isGrounded = false;
 
+            }
+        }
+
+        if (jumpCutTimer > 0)
+        {
+            jumpCutTimer -= Time.fixedDeltaTime;
+        }
+
+        if (coyoteTimeTimer > 0)
+        {
+            coyoteTimeTimer -= Time.fixedDeltaTime;
+        }
+        if (hasWon == true)
+        {
+            Debug.Log("Du har vundet!");
+        }
     }
 
     private void OnMovement(InputValue input)
@@ -95,31 +129,48 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnJump(InputValue buttonPress)
-    {   
+    {
         //Jumping
         if (isGrounded)
         {
-            isJumping = true;
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
+            if (!isJumping)
+            {
+                jumpCutTimer = jumpCutWindow;
+                isJumping = true;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                isGrounded = false;
+            }
         }
         else if (isGrounded == false)
-        {   
+        {
+            if (coyoteTimeTimer > 0)
+            {
+                Debug.Log("COYOTE JUMP MOVE");
+                jumpCutTimer = jumpCutWindow;
+                isJumping = true;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
             jumpBufferTimer = jumpBuffer;
         }
 
-        //if (buttonPress.canceled)
-        //{
-            //Debug.Log("JumpCutShort");
-            //jumpCutted = true;
-            //rb.AddForce(Vector2.down * rb.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
-        //}
+    }
 
+    private void Jump(InputAction.CallbackContext context)
+    {
+        if (jumpCutted == false)
+        {
+            if (rb.velocity.y > 0 && jumpCutTimer > 0)
+            {
+                jumpCutted = true;
+                Debug.Log("JumpCutted");
+                rb.AddForce(Vector2.down * rb.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
             isJumping = false;
@@ -127,21 +178,51 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("V�g Moment");
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
             jumpCutted = false;
+
+            if (isJumping == false)
+            {
+                coyoteTimeTimer = coyoteTimeWindow;
+            }
+
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Collectable")
+        if (collision.gameObject.CompareTag("Collectable"))
         {
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Exit"))
+        {
+            if (Collectables.allCollected)
+            {
+                Debug.Log("Du har vundet!");
+            }
+        }
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Exit"))
+        {
+            if (Collectables.allCollected)
+            {
+                hasWon = true; // To prevent multiple win states - Debounce
+            }
+        }
+    }
 }
