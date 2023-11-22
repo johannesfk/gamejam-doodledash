@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float timer;
+    public float timer;
 
     public GameObject pauseScreen;
 
