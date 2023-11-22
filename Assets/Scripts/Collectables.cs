@@ -8,7 +8,7 @@ public class Collectables : MonoBehaviour
     public static bool allCollected = false;
     private void Start()
     {
-        collectableCount = FindObjectsOfType<Collectable>().Length;
+     //   collectableCount = FindObjectsOfType<Collectable>().Length;
     }
     private void Update()
     {
