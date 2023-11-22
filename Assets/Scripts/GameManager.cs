@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +19,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI timerText;
     public float timer;
-
+    [SerializeField]
     public GameObject pauseScreen;
+
+    [SerializeField]
+    public GameObject levelComplete;
 
 
     private void Awake()
@@ -35,8 +42,8 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-       timer += Time.fixedDeltaTime;
-       
+        timer += Time.fixedDeltaTime;
+
     }
 
 
@@ -54,7 +61,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Debug.Log("Game is paused");
         pauseScreen.SetActive(true);
-
     }
 
     public void Resume()
@@ -76,23 +82,28 @@ public class GameManager : MonoBehaviour
     {
         Pause();
         //EndScreen.setactive(true);
-        
-;
+
+        ;
         CheckHighScore();
         //highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
-        
-
+    }
+    public void LevelComplete()
+    {
+        Debug.Log("Level Complete");
+        Time.timeScale = 0;
+        levelComplete.SetActive(true);
+        CheckHighScore();
+        highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
     }
 
     void CheckHighScore()
     {
-        if (timer < PlayerPrefs.GetFloat("HighScore" + MenuManager.Instance.levelName , 0))
+        if (timer < PlayerPrefs.GetFloat("HighScore" + SceneManager.GetActiveScene().name, 0))
         {
-            PlayerPrefs.SetFloat("HighScore" + MenuManager.Instance.levelName, timer);
+            PlayerPrefs.SetFloat("HighScore" + SceneManager.GetActiveScene().name, timer);
         }
 
     }
-
 
     bool GameHasEnded = false;
     public GameObject GameOverBackground;

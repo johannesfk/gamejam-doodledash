@@ -9,9 +9,11 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     public string levelName;
 
+    public int levelIndex;
+
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
     }
 
     public void StartGame()
@@ -40,5 +42,11 @@ public class MenuManager : MonoBehaviour
         levelName = "Level " + level;
         SceneManager.LoadScene(levelName);
         Debug.Log("Loading " + levelName);
+        levelIndex = level;
     }
-}   
+
+    public void NextLevel()
+    {
+        SelectLevel(levelIndex + 1);
+    }
+}

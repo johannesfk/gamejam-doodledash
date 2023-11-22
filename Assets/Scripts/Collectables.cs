@@ -10,10 +10,10 @@ public class Collectables : MonoBehaviour
     {
      //   collectableCount = FindObjectsOfType<Collectable>().Length;
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        Debug.Log(collectableCount);
-        if (collectableCount == 0)
+        // Debug.Log("collectableCount: " + collectableCount);
+        if (collectableCount < 1)
         {
             allCollected = true;
             Debug.Log("Gå til exit!");

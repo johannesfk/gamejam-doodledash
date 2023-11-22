@@ -166,8 +166,11 @@ public class PlayerController : MonoBehaviour
         if (hasWon == true)
         {
             Debug.Log("Du har vundet!");
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            gameManager.LevelComplete();
         }
     }
+
 
     private void OnMovement(InputValue input)
     {
@@ -355,6 +358,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Exit"))
         {
+            Debug.Log("Du ramte exit");
+            Debug.Log(Collectables.allCollected);
             if (Collectables.allCollected)
             {
                 hasWon = true; // To prevent multiple win states - Debounce
