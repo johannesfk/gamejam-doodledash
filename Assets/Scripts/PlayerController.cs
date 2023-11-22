@@ -135,10 +135,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //PowerUps
-        if (cardStack.cards.Count > 0)
+        /* if (cardStack.cards.Count > 0)
         {
             nextPower = cardStack.cards[0].power;
-        }
+        } */
 
         if (bounceActivated)
         {
@@ -146,8 +146,8 @@ public class PlayerController : MonoBehaviour
             {
                 bouncePower = Mathf.Abs(rb.velocity.y);
             }
-            
-            if (isGrounded) 
+
+            if (isGrounded)
             {
                 rb.AddForce(Vector2.up * bouncePower * bounceMultiplier, ForceMode2D.Impulse);
                 bounceActivated = false;
@@ -175,13 +175,13 @@ public class PlayerController : MonoBehaviour
     private void OnMovement(InputValue input)
     {
         movement = input.Get<Vector2>();
-       
-        
-        if (isGrounded)
+
+
+        /* if (isGrounded)
         {
             CreateDust();
-        }
-            
+        } */
+
     }
 
     private void OnJump(InputValue buttonPress)
@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                CreateDust();
+                // CreateDust();
                 isGrounded = false;
             }
         }
@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
             switch (nextPower)
             {
                 case PowerType.Dash:
-                    
+
                     if (movement.x != 0)
                     {
                         Debug.Log("DASH MOVE");
@@ -241,9 +241,9 @@ public class PlayerController : MonoBehaviour
 
                         cardStack.Use();
                     }
-                    
 
-                break;
+
+                    break;
 
                 case PowerType.DoubleJump:
                     if (!isGrounded && isJumping)
@@ -253,7 +253,7 @@ public class PlayerController : MonoBehaviour
                         cardStack.Use();
 
                     }
-                break;
+                    break;
 
                 case PowerType.WallJump:
 
@@ -268,7 +268,7 @@ public class PlayerController : MonoBehaviour
                         cardStack.Use();
                     }
 
-                break;
+                    break;
 
                 case PowerType.Teleport:
                     Debug.Log("TP MOVE");
@@ -277,10 +277,10 @@ public class PlayerController : MonoBehaviour
                     cardStack.Use();
 
 
-                break;
+                    break;
 
                 case PowerType.Bounce:
-                    
+
                     if (!isGrounded)
                     {
                         Debug.Log("BOUNCE MOVE");
@@ -289,7 +289,7 @@ public class PlayerController : MonoBehaviour
                         cardStack.Use();
                     }
 
-                break;
+                    break;
             }
 
         }
@@ -300,7 +300,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            CreateDust();
+            // CreateDust();
             isJumping = false;
             jumpCutted = false;
         }
@@ -367,11 +367,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void CreateDust()
+    /* void CreateDust()
     {
         dust.Play();
-    }
-
-
+    } */
 
 }

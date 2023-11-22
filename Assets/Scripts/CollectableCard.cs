@@ -26,8 +26,6 @@ public class CardCollectableCard : MonoBehaviour
             Sprite cardSprite = cardStyles.cardSprites[power];
             GetComponent<SpriteRenderer>().sprite = cardSprite;
         }
-
-
     }
 
     private void OnDestroy()

@@ -179,6 +179,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a75d7455-1f02-4dcd-90ca-98b5419b51a5",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bfd459ba-5f42-485c-ad05-fa9f227140d6",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -192,6 +203,17 @@
                     "name": "",
                     "id": "914a8d9f-ae03-447e-9c75-53704dae49b1",
                     "path": "<Keyboard>/leftAlt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsePowerUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f7fce97-eb01-4d85-b580-09359b639b4f",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

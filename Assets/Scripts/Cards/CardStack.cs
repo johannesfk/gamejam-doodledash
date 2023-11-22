@@ -22,7 +22,14 @@ public class CardStack : MonoBehaviour
 {
     public void Add(PowerType power)
     {
-        cards.Insert(1, new Card(power));
+        if (cards.Count > 1)
+        {
+            cards.Insert(1, new Card(power));
+        }
+        else
+        {
+            cards.Add(new Card(power));
+        }
     }
     public void Use()
     {
@@ -30,7 +37,7 @@ public class CardStack : MonoBehaviour
         {
             cards.RemoveAt(0);
         }
-        
+
     }
     public List<Card> cards;
 }
