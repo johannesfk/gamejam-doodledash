@@ -15,15 +15,15 @@ public class PlayerController : MonoBehaviour
     public CardStack cardStack;
 
     [Header("GroundedMovement")]
-    [SerializeField] private float speed = 8;
-    [SerializeField] private float speedPower = 1f;
-    [SerializeField] private float acceleration = 13f;
-    [SerializeField] private float decceleration = 16f;
+    [SerializeField] private float speed = 15;
+    [SerializeField] private float speedPower = 0.9f;
+    [SerializeField] private float acceleration = 4f;
+    [SerializeField] private float decceleration = 12f;
 
     [Header("Jump Settings")]
-    [SerializeField] private float jumpForce = 15;
-    [SerializeField] private float fallGravity = 2;
-    [SerializeField] private float jumpBuffer = 0.2f;
+    [SerializeField] private float jumpForce = 12;
+    [SerializeField] private float fallGravity = 4;
+    [SerializeField] private float jumpBuffer = 0.1f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
     [SerializeField] private float jumpCutWindow = 1f;
     [SerializeField] private float coyoteTimeWindow = 0.05f;
@@ -36,12 +36,12 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
 
     [Header("PowerUp Settings")]
-    [SerializeField] private float wallJumpXmultiplier;
-    [SerializeField] private float dashSpeed = 15;
-    [SerializeField] private float dashAngleMultiplier = 0.4f;
-    [SerializeField] private float bounceMultiplier = 1.5f;
+    [SerializeField] private float wallJumpXmultiplier = 15;
+    [SerializeField] private float dashSpeed = 100;
+    [SerializeField] private float dashAngleMultiplier = 0.3f;
+    [SerializeField] private float bounceMultiplier = 1.2f;
     [SerializeField] private GameObject tpPosition;
-    [SerializeField] private float tpPositionMultiplier = 1.5f;
+    [SerializeField] private float tpPositionMultiplier = 5;
 
     private bool touchingWall = false;
     private bool bounceActivated = false;
