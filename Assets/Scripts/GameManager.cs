@@ -72,9 +72,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPauseMenu(InputValue button)
     {
-        Pause();
+        //Pause();
         Debug.Log("hotkey: pause");
-        //transition.SetTrigger("Start");
+        transition.SetTrigger("Start");
 
     }
 
