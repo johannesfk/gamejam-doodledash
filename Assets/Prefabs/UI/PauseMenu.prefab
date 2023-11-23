@@ -526,9 +526,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2424645336031837875, guid: 943a14745bedddd4fabd88123a0a20c0, type: 3}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: RestartCurrentLevel
+      - m_Target: {fileID: 3314470544677206820, guid: c34ee8db94213b64d9ee5148ab50d2ad, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -9,8 +9,6 @@ public class Collectables : MonoBehaviour
     private void Start()
     {
         collectableCount = FindObjectsOfType<Collectable>().Length;
-
-        Debug.Log("collectableCount: " + collectableCount);
     }
     private void FixedUpdate()
     {
