@@ -401,6 +401,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930708184}
     m_Modifications:
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143454780904256436, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
       propertyPath: m_Name
       value: Moving Horizontal Platform (1)
@@ -530,6 +542,18 @@ PrefabInstance:
     - target: {fileID: 1290755479036545625, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
@@ -826,6 +850,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
       value: ClosedPlatformMedium Top Ground Variant (1)
@@ -1103,6 +1139,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930708184}
     m_Modifications:
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143454780904256436, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
       propertyPath: m_Name
       value: Moving Horizontal Platform
@@ -1445,6 +1493,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930708184}
     m_Modifications:
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143454780904256436, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
       propertyPath: m_Name
       value: Moving Horizontal Platform (2)
@@ -1759,6 +1819,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
       value: ClosedPlatformMedium Top Ground Variant (2)
@@ -1824,6 +1896,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
       value: ClosedPlatformMedium Top Ground (1)
@@ -1885,6 +1969,18 @@ PrefabInstance:
     - target: {fileID: 1290755479036545625, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
@@ -2599,6 +2695,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
       value: ClosedPlatformMedium Top Ground Variant
@@ -2660,6 +2768,18 @@ PrefabInstance:
     - target: {fileID: 1290755479036545625, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
@@ -2894,6 +3014,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
       value: ClosedPlatformMedium Top Ground (1)
@@ -3039,6 +3171,18 @@ PrefabInstance:
     - target: {fileID: 1290755479036545625, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
@@ -3938,6 +4082,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930708184}
     m_Modifications:
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143454780904256436, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
       propertyPath: m_Name
       value: Moving Horizontal Platform (4)
@@ -4028,6 +4184,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930708184}
     m_Modifications:
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809436186590155209, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143454780904256436, guid: b80d916dc6cc6de489b8822717c60b7d, type: 3}
       propertyPath: m_Name
       value: Moving Horizontal Platform (3)
@@ -4157,6 +4325,18 @@ PrefabInstance:
     - target: {fileID: 1290755479036545625, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
@@ -4615,8 +4795,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 70fcb2e99c2ff492c877212f7faf1c19, type: 3}
+  m_SortingOrder: -20
+  m_Sprite: {fileID: 21300000, guid: f1df6e74c8350441597bbdcfe9f46157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5139,7 +5319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2877022302578108687, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3296553361443041999, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: m_IsActive
@@ -5356,6 +5536,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5371815018720081640, guid: 254fb479541398f498499a91de579aaa, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371815018720081640, guid: 254fb479541398f498499a91de579aaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371815018720081640, guid: 254fb479541398f498499a91de579aaa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5413,6 +5605,18 @@ PrefabInstance:
     - target: {fileID: 1290755479036545625, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238907466273379597, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435263374005758997, guid: 4f84963e59eccf040a0e62dbfc69d7f7, type: 3}
       propertyPath: m_Name
