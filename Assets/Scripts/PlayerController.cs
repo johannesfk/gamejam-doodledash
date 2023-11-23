@@ -97,6 +97,15 @@ public class PlayerController : MonoBehaviour
         var ps = dust.main;
         ps.startColor = platformColor;
 
+        if (movement.x < 0)
+        {
+            transform.localScale = Vector3.one + Vector3.left * 2;
+        }
+        if (movement.x > 0)
+        {
+            transform.localScale = Vector3.one;
+        }
+
         #region This Code was made with this tutorial: https://www.youtube.com/watch?v=KbtcEVCM7bw
         //Calculating next direction of movement
         float nextMove = movement.x * speed;
