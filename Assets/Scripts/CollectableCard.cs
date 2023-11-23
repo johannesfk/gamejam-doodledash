@@ -18,7 +18,7 @@ public class CardCollectableCard : MonoBehaviour
 
         if (cardStyles.cardColors != null)
         {
-            Debug.Log("Tilføjer farve for " + power + " til kortstakken");
+            // Debug.Log("Tilføjer farve for " + power + " til kortstakken");
             Color cardColor = cardStyles.cardColors[power];
 
             GetComponent<SpriteRenderer>().color = cardColor;
@@ -26,7 +26,7 @@ public class CardCollectableCard : MonoBehaviour
 
         if (cardStyles.cardSprites != null)
         {
-            Debug.Log("Tilføjer sprite for " + power + " til kortstakken");
+            // Debug.Log("Tilføjer sprite for " + power + " til kortstakken");
             Sprite cardSprite = cardStyles.cardSprites[power];
             GetComponent<SpriteRenderer>().sprite = cardSprite;
         }
