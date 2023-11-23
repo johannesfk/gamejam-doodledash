@@ -199,6 +199,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Jump");
                 CreateDust();
                 isGrounded = false;
             }
