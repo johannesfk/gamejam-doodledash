@@ -140,10 +140,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //PowerUps
-         if (cardStack.cards.Count > 0)
-         {
+        if (cardStack.cards.Count > 0)
+        {
             nextPower = cardStack.cards[0].power;
-         }
+        }
 
         if (bounceActivated)
         {
@@ -255,8 +255,13 @@ public class PlayerController : MonoBehaviour
                     if (!isGrounded && isJumping)
                     {
                         Debug.Log("DOUBLE JUMP MOVE");
-                        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+                        rb.AddForce(Vector2.up * jumpForce + Vector2.up * Mathf.Abs(rb.velocity.y), ForceMode2D.Impulse);
+
+
                         cardStack.Use();
+
+
 
                     }
                     break;
@@ -314,7 +319,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision)
-    {
+    {   
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+
         if (collision.gameObject.tag == "Wall")
         {
             touchingWall = true;
@@ -366,7 +376,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Exit"))
         {
             Debug.Log("Du ramte exit");
-            Debug.Log(Collectables.allCollected);
+            // Debug.Log(Collectables.allCollected);
             if (Collectables.allCollected)
             {
                 hasWon = true; // To prevent multiple win states - Debounce
@@ -377,6 +387,6 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
-    } 
+    }
 
 }

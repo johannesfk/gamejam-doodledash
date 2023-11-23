@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Animator transition;
+    private GameObject levelLoader;
 
     [SerializeField] TextMeshProUGUI highScoreText;
     [SerializeField] TextMeshProUGUI timerText;
@@ -25,19 +26,47 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public GameObject levelComplete;
 
-
     private void Awake()
     {
+        /* if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+
+            DontDestroyOnLoad(gameObject);
+        } */
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        pauseScreen.SetActive(false);
-    }
+        levelLoader = GameObject.Find("LevelLoader");
+        transition = levelLoader.GetComponentInChildren<Animator>();
+        highScoreText = GameObject.Find("HighScoreText").GetComponent<TextMeshProUGUI>();
+        timerText = GameObject.Find("CurrentTimer").GetComponent<TextMeshProUGUI>();
 
+        pauseScreen = GameObject.Find("PauseMenu");
+        levelComplete = GameObject.Find("LevelCompleteMenu");
+
+        if (transition == null)
+        {
+            Debug.LogError("No GameObject named 'EraserWipe' found in the scene or it doesn't have an Animator component");
+        }
+        if (pauseScreen == null)
+        {
+            Debug.LogError("No GameObject named 'PauseMenu' found in the scene");
+        }
+        if (levelComplete == null)
+        {
+            Debug.LogError("No GameObject named 'LevelCompleteMenu' found in the scene");
+        }
+
+        pauseScreen.SetActive(false);
+        levelComplete.SetActive(false);
+        levelLoader.SetActive(false);
+    }
 
 
     private void FixedUpdate()
@@ -72,10 +101,8 @@ public class GameManager : MonoBehaviour
 
     public void OnPauseMenu(InputValue button)
     {
-        //Pause();
+        Pause();
         Debug.Log("hotkey: pause");
-        transition.SetTrigger("Start");
-
     }
 
     public void EndLevel()
@@ -90,10 +117,25 @@ public class GameManager : MonoBehaviour
     public void LevelComplete()
     {
         Debug.Log("Level Complete");
-        Time.timeScale = 0;
-        levelComplete.SetActive(true);
+        levelLoader.SetActive(true);
+        transition.SetTrigger("Start");
+        // Time.timeScale = 0;
+
+        if (transition.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && transition.GetCurrentAnimatorStateInfo(0).IsName("Erase Transition"))
+        {
+            Debug.Log("Transition is done");
+            levelComplete.SetActive(true);
+        }
+
         CheckHighScore();
-        highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
+        if (highScoreText == null)
+        {
+            Debug.LogError("highScoreText is null");
+        }
+        else
+        {
+            highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore", 0)}";
+        }
     }
 
     void CheckHighScore()
