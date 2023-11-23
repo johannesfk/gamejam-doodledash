@@ -11,27 +11,26 @@ public class CardCollectableCard : MonoBehaviour
 
     private CardStyles cardStyles;
 
-    private void Awake()
+    private void Start()
     {
         cardStack = FindObjectOfType<CardStack>();
         cardStyles = cardStack.GetComponentInParent<CardStyles>();
 
         if (cardStyles.cardColors != null)
         {
+            Debug.Log("Tilføjer farve for " + power + " til kortstakken");
             Color cardColor = cardStyles.cardColors[power];
-            
+
             GetComponent<SpriteRenderer>().color = cardColor;
         }
 
-        /*
-        Enable this when we have sprites for the cards
-        
         if (cardStyles.cardSprites != null)
         {
+            Debug.Log("Tilføjer sprite for " + power + " til kortstakken");
             Sprite cardSprite = cardStyles.cardSprites[power];
             GetComponent<SpriteRenderer>().sprite = cardSprite;
         }
-        */
+
     }
 
     private void OnDestroy()

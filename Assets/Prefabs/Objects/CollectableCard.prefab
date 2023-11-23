@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 0
-  cardStack: {fileID: 0}
 --- !u!212 &318979755972907340
 SpriteRenderer:
   m_ObjectHideFlags: 0
