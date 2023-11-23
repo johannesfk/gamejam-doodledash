@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         float moveAction = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRate, speedPower) * Mathf.Sign(speedDif);
 
         rb.AddForce(moveAction * Vector2.right);
-        print(rb.velocity.x);
+        // print(rb.velocity.x);
 
         #endregion
 
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         if (jumpBufferTimer > 0)
         {
             jumpBufferTimer -= Time.fixedDeltaTime;
-            
+
             if (canBuffer)
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
             }
 
             jumpBufferTimer = jumpBuffer;
-            
+
         }
 
     }
@@ -265,17 +265,17 @@ public class PlayerController : MonoBehaviour
 
                 case PowerType.DoubleJump:
                     if (!isGrounded)
-                    {   
+                    {
                         Debug.Log("DOUBLE JUMP MOVE");
 
                         if (rb.velocity.y < 0)
                         {
 
                             rb.AddForce(Vector2.up * jumpForce * dJMultiplier, ForceMode2D.Impulse);
-                            
+
                         }
                         else
-                        {   
+                        {
                             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                         }
                         cardStack.Use();
