@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 rb.AddForce(Vector2.up * bouncePower * bounceMultiplier, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Bounce");
                 bounceActivated = false;
                 Debug.Log(bouncePower);
             }
