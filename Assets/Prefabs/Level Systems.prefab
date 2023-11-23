@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2900805947531115440}
   - component: {fileID: 4481679781226414155}
-  - component: {fileID: 4049928941397484391}
   - component: {fileID: 148360204758897539}
   - component: {fileID: 7980364157239852352}
   m_Layer: 0
@@ -86,14 +85,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4049928941397484391
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84412995953863602}
-  m_Enabled: 1
 --- !u!114 &148360204758897539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,10 +459,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5986726993528317085, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 4481679781226414155}
     - target: {fileID: 1165043384360147387, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -480,6 +467,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LevelSelector
       objectReference: {fileID: 0}
+    - target: {fileID: 5986726993528317085, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 4481679781226414155}
     - target: {fileID: 7138606807128286532, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
       propertyPath: m_Name
       value: LevelCompleteMenu

@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         gravityScale = rb.gravityScale;
         isJumping = false;
 
-        
+
 
     }
 
@@ -91,8 +91,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        animator.SetFloat("VelocityX", movement.x);
-        animator.SetFloat("VelocityY", rb.velocity.y);
+        /* animator.SetFloat("VelocityX", movement.x);
+        animator.SetFloat("VelocityY", rb.velocity.y); */
 
         var ps = dust.main;
         ps.startColor = platformColor;

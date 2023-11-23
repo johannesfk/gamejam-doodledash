@@ -19,6 +19,7 @@ public class CardCollectableCard : MonoBehaviour
         if (cardStyles.cardColors != null)
         {
             Color cardColor = cardStyles.cardColors[power];
+            
             GetComponent<SpriteRenderer>().color = cardColor;
         }
 
