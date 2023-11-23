@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour
         score = timer;
         levelLoader.SetActive(true);
         transition.SetTrigger("Start");
+        FindObjectOfType<AudioManager>().Play("Eraser");
 
         StartLoadingAnimation();
 
