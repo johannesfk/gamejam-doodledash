@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector2.up * bouncePower * bounceMultiplier, ForceMode2D.Impulse);
                 FindObjectOfType<AudioManager>().Play("Bounce");
                 bounceActivated = false;
-                Debug.Log(bouncePower);
+                // Debug.Log(bouncePower);
             }
 
 
