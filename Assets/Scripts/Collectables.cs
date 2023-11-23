@@ -16,7 +16,7 @@ public class Collectables : MonoBehaviour
         if (collectableCount < 1)
         {
             allCollected = true;
-            Debug.Log("Gå til exit!");
+            //Debug.Log("Gå til exit!");
         }
     }
 }
