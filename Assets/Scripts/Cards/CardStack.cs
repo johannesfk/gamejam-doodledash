@@ -7,8 +7,6 @@ using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 using System.Linq;
-
-
 public enum PowerType
 {
     Dash,
@@ -17,9 +15,11 @@ public enum PowerType
     Bounce,
     Teleport
 }
-
 public class CardStack : MonoBehaviour
 {
+    public CardUIManager cardUIManager;
+    
+
     public void Add(PowerType power)
     {
         if (cards.Count > 1)
@@ -37,7 +37,6 @@ public class CardStack : MonoBehaviour
         {
             cards.RemoveAt(0);
         }
-
     }
     public List<Card> cards;
 }
