@@ -144,10 +144,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //PowerUps
-         if (cardStack.cards.Count > 0)
-         {
+        if (cardStack.cards.Count > 0)
+        {
             nextPower = cardStack.cards[0].power;
-         }
+        }
 
         if (bounceActivated)
         {
@@ -159,6 +159,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 rb.AddForce(Vector2.up * bouncePower * bounceMultiplier, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Bounce");
                 bounceActivated = false;
                 Debug.Log(bouncePower);
             }
@@ -203,6 +204,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Jump");
                 CreateDust();
                 isGrounded = false;
             }
@@ -387,7 +389,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Exit"))
         {
             Debug.Log("Du ramte exit");
-            Debug.Log(Collectables.allCollected);
+            // Debug.Log(Collectables.allCollected);
             if (Collectables.allCollected)
             {
                 hasWon = true; // To prevent multiple win states - Debounce
@@ -398,6 +400,6 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
-    } 
+    }
 
 }

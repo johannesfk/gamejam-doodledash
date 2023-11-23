@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour
     public void RestartCurrentLevel()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        Time.timeScale = 1;
         SceneManager.LoadScene(currentScene.name);
         Debug.Log("Restarting " + currentScene.name);
     }
@@ -49,4 +50,11 @@ public class MenuManager : MonoBehaviour
     {
         SelectLevel(levelIndex + 1);
     }
+
+    public void RemoveStickyNote()
+    {
+        FindObjectOfType<AudioManager>().Play("StickyNoteRemoval");
+    }
+
+
 }

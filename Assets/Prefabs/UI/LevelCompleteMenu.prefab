@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 98
   m_Sprite: {fileID: 21300000, guid: 12ed318287aa04a75aee99ec6de6febe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,8 +111,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 24, y: 26.7, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 296976505425203435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 98
   m_Sprite: {fileID: 21300000, guid: f5f3038147b514ad1942c81ed1e4765e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -230,7 +230,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 999
+  m_SortingOrder: 99
   m_TargetDisplay: 0
 --- !u!114 &7425790415754041101
 MonoBehaviour:
@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6308251839324201262, guid: 254c61fe39c932e498deba5ea76755cf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 372
+      objectReference: {fileID: 0}
     - target: {fileID: 6593377632969588727, guid: 254c61fe39c932e498deba5ea76755cf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

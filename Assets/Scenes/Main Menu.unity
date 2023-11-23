@@ -392,6 +392,18 @@ MonoBehaviour:
           m_StringArgument: Falling Paper
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &280102305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +537,18 @@ MonoBehaviour:
           m_StringArgument: Falling Paper
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &283676747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +587,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283676744}
   m_CullTransparentMesh: 1
+--- !u!1001 &334986381
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5515465621740070684, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599197535427959827, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b6de12e2ccc455f438d8a52bb84b6de0, type: 3}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155582034630602904, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 31408abe6ce93474eb8b342f65f4ea34, type: 3}
 --- !u!1 &343667543
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +741,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Falling Paper
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &343667546
@@ -1043,8 +1140,8 @@ MonoBehaviour:
 
     here:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+  m_sharedMaterial: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1068,7 +1165,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.95
+  m_fontSize: 72
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1310,6 +1407,18 @@ MonoBehaviour:
           m_StringArgument: Falling Paper
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1165278456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,6 +1550,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Falling Paper
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1177443692
@@ -1654,6 +1775,18 @@ MonoBehaviour:
           m_StringArgument: Falling Paper
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1245279269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1785,6 +1918,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Falling Paper
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1248857475
@@ -2175,8 +2320,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Post it Powerups!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+  m_sharedMaterial: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2343,6 +2488,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Falling Paper
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1738885282
@@ -2573,6 +2730,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Falling Paper
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 422064426}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RemoveStickyNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1748747046
@@ -3427,8 +3596,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+  m_sharedMaterial: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3594,9 +3763,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 4654926846674315948}
     m_Modifications:
     - target: {fileID: 3713207973390779875, guid: 15b88e0008b8b13409372ff948668a0d, type: 3}
+      propertyPath: m_text
+      value: "\u200B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713207973390779875, guid: 15b88e0008b8b13409372ff948668a0d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 3713207973390779875, guid: 15b88e0008b8b13409372ff948668a0d, type: 3}
       propertyPath: m_isRightToLeft
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3713207973390779875, guid: 15b88e0008b8b13409372ff948668a0d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
     - target: {fileID: 3713207973390779875, guid: 15b88e0008b8b13409372ff948668a0d, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
@@ -3716,8 +3897,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+  m_sharedMaterial: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3955,6 +4136,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 334986381}
   - {fileID: 2089593312}
   - {fileID: 1812116309}
   - {fileID: 1201819300}
