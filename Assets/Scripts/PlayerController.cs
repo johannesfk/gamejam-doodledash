@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
         float moveAction = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRate, speedPower) * Mathf.Sign(speedDif);
 
         rb.AddForce(moveAction * Vector2.right);
-        print(rb.velocity.x);
 
         #endregion
 
