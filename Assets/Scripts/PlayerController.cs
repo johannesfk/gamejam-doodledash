@@ -107,12 +107,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = Vector3.one;
         }
-        if (!isJumping)
+        if (!isJumping && movement.x == 0)
         {
-            if (movement.x == 0)
-            {
+  
                 isIdle = true;
-            }
         }
         else
         {
