@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2072838840441206043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 276410124129574934, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276410124129574934, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276410124129574934, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726746858201874393, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2727492
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726746858201874393, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Size.y
+      value: 0.57951045
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726746858201874393, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.02195561
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726746858201874393, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0064110905
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010982462592948494, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Name
+      value: ClosedPlatformMedium Top Ground Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703106353612796171, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64987224
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703106353612796171, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0067010224
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
