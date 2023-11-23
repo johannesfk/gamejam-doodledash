@@ -314,6 +314,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1165043384360147387, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165043384360147387, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelector
+      objectReference: {fileID: 0}
     - target: {fileID: 7138606807128286532, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
       propertyPath: m_Name
       value: LevelCompleteMenu
@@ -389,6 +397,30 @@ PrefabInstance:
     - target: {fileID: 3558953733786762248, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
       propertyPath: m_Name
       value: Card Stack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
+      propertyPath: cards.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
+      propertyPath: cards.Array.data[0].power
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
+      propertyPath: cards.Array.data[1].power
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
+      propertyPath: cards.Array.data[2].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
+      propertyPath: cards.Array.data[3].power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
+      propertyPath: cards.Array.data[4].power
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
