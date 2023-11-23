@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public Animator transition;
     private GameObject levelLoader;
-
+    private GameObject baseUI;
     private TextMeshProUGUI highScoreText;
     private TextMeshProUGUI timerText;
     private TextMeshProUGUI sessionTimeText;
@@ -46,11 +46,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         levelLoader = GameObject.Find("LevelLoader");
+        baseUI = GameObject.Find("Base Level UI");
         transition = levelLoader.GetComponentInChildren<Animator>();
         highScoreText = GameObject.Find("HighScoreText").GetComponent<TextMeshProUGUI>();
         timerText = GameObject.Find("CurrentTime").GetComponent<TextMeshProUGUI>();
         sessionTimeText = GameObject.Find("SessionTime").GetComponent<TextMeshProUGUI>();
-
 
         pauseScreen = GameObject.Find("PauseMenu");
         levelComplete = GameObject.Find("LevelCompleteMenu");
@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Level Complete");
         score = timer;
         levelLoader.SetActive(true);
+        baseUI.SetActive(false);
         transition.SetTrigger("Start");
 
         StartLoadingAnimation();
@@ -167,9 +168,6 @@ public class GameManager : MonoBehaviour
             highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0)}";
             sessionTimeText.text = FormatTime(score);
         }
-
-        PlayerPrefs.SetFloat("float 1", score);
-        Debug.Log(PlayerPrefs.GetFloat("float 1", 0));
     }
 
     IEnumerator CheckHighScore()
