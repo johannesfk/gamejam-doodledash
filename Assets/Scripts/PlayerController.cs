@@ -54,10 +54,6 @@ public class PlayerController : MonoBehaviour
     private PowerType nextPower;
     private Vector3 wallPos;
 
-    [Header("Animation States")]
-    private bool isRunning;
-    private bool idleState;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -85,35 +81,19 @@ public class PlayerController : MonoBehaviour
     {
         gravityScale = rb.gravityScale;
         isJumping = false;
+
+        
+
     }
 
-    private void Update()
-    {
 
-        animator.SetBool("Running", isRunning);
-        animator.SetBool("Jumping", isJumping);
-        animator.SetBool("Idle", idleState);
-
-        if (movement.x != 0)
-        {
-            if (!isJumping)
-            {
-                isRunning = true;
-            }
-            
-        }
-        else
-        {
-            if (!isJumping)
-            {
-                idleState = true;
-                isRunning = false;
-            }
-        }
-    }
 
     private void FixedUpdate()
     {
+
+        animator.SetFloat("VelocityX", movement.x);
+        animator.SetFloat("VelocityY", rb.velocity.y);
+
         var ps = dust.main;
         ps.startColor = platformColor;
 
