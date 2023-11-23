@@ -94,7 +94,7 @@ MonoBehaviour:
   jumpCutWindow: 1
   coyoteTimeWindow: 0.05
   wallJumpXmultiplier: 15
-  dashSpeed: 100
+  dashSpeed: 50
   dashAngleMultiplier: 0.3
   bounceMultiplier: 1.2
   tpPosition: {fileID: 4023329124467211263}
