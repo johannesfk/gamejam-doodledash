@@ -94,6 +94,12 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: WinSound
+    clip: {fileID: 8300000, guid: 6de7039f934a7d7438cfb463c267915a, type: 3}
+    volume: 0.69
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &-4092860593830314547
 MonoBehaviour:
   m_ObjectHideFlags: 0

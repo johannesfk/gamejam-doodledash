@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level Complete");
         score = timer;
+        FindObjectOfType<AudioManager>().Play("WinSound");
         levelLoader.SetActive(true);
         baseUI.SetActive(false);
         transition.SetTrigger("Start");
