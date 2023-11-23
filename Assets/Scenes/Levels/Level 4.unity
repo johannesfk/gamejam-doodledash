@@ -216,7 +216,8 @@ PrefabInstance:
       value: Base Level UI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3104687310877355182, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
