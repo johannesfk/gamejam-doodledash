@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public ParticleSystem dust;
+    private Color platformColor;
 
     private GameActions playerControls;
     private InputAction jumpAction;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerControls = new GameActions();
         jumpAction = playerControls.Movement.Jump;
+        
     }
     private bool hasWon = false;
 
@@ -79,6 +81,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        var ps = dust.main;
+        ps.startColor = platformColor;
+
 
         #region This Code was made with this tutorial: https://www.youtube.com/watch?v=KbtcEVCM7bw
         //Calculating next direction of movement
@@ -300,9 +305,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            // CreateDust();
             isJumping = false;
             jumpCutted = false;
+            platformColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
+            CreateDust();
         }
     }
 
