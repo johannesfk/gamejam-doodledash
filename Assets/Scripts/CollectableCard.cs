@@ -6,7 +6,7 @@ public class CardCollectableCard : MonoBehaviour
 {
     [SerializeField]
     private PowerType power;
-    // [SerializeField]
+    //[SerializeField]
     private CardStack cardStack;
 
     private CardStyles cardStyles;
@@ -19,6 +19,7 @@ public class CardCollectableCard : MonoBehaviour
         if (cardStyles.cardColors != null)
         {
             Color cardColor = cardStyles.cardColors[power];
+            
             GetComponent<SpriteRenderer>().color = cardColor;
         }
 
