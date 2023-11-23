@@ -19,14 +19,15 @@ public class CameraController : MonoBehaviour
             if (movingUpCamera)
             {
                 cameraPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+                transform.position = cameraPos;
             }
             else
             {
                 cameraPos = new Vector3(player.transform.position.x - offset, transform.position.y, transform.position.z);
-
                 transform.position = cameraPos;
+
             }
-            
+
         }
         
     }
