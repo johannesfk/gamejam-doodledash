@@ -57,9 +57,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerControls = new GameActions();
         jumpAction = playerControls.Movement.Jump;
-        
+
     }
     private bool hasWon = false;
+    private bool levelCompleted = false;
 
 
     private void OnEnable()
@@ -170,9 +171,13 @@ public class PlayerController : MonoBehaviour
 
         if (hasWon == true)
         {
-            Debug.Log("Du har vundet!");
+            // Debug.Log("Du har vundet!");
             GameManager gameManager = FindObjectOfType<GameManager>();
-            gameManager.LevelComplete();
+            if (!levelCompleted)
+            {
+                gameManager.LevelComplete();
+                levelCompleted = true;
+            }
         }
     }
 
@@ -300,6 +305,8 @@ public class PlayerController : MonoBehaviour
                     }
 
                     break;
+                default:
+                    break;
             }
 
         }
@@ -318,7 +325,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision)
-    {   
+    {
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
@@ -362,13 +369,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("Exit"))
-        {
-            if (Collectables.allCollected)
-            {
-                Debug.Log("Du har vundet!");
-            }
-        }
+        /*  if (collision.gameObject.CompareTag("Exit"))
+         {
+             if (Collectables.allCollected)
+             {
+                 Debug.Log("Du har vundet!");
+             }
+         } */
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

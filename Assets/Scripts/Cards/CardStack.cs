@@ -37,7 +37,6 @@ public class CardStack : MonoBehaviour
         {
             cards.RemoveAt(0);
         }
-
     }
     public List<Card> cards;
 }

@@ -42,6 +42,7 @@ public class MenuManager : MonoBehaviour
     {
         levelName = "Level " + level;
         SceneManager.LoadScene(levelName);
+        Time.timeScale = 1;
         Debug.Log("Loading " + levelName);
         levelIndex = level;
     }
