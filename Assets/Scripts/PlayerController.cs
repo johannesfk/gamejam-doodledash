@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 Debug.Log("JUMP BUFFERED");
+                FindObjectOfType<AudioManager>().Play("Jump");
                 isJumping = true;
                 canBuffer = false;
             }
