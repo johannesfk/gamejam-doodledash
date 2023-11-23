@@ -173,8 +173,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            highScoreText.text = $"HighScore: {FormatTimeMillisec(PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0))}";
-            sessionTimeText.text = FormatTimeMillisec(score);
+            highScoreText.text = $"Highscore: {FormatTimeMillisec(PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0))}";
+            sessionTimeText.text = $"Your time: {FormatTimeMillisec(score)}";
         }
     }
 
