@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Systems
       objectReference: {fileID: 0}
+    - target: {fileID: 2877022302578108687, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5037282174128012356, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
