@@ -107,8 +107,8 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-        Debug.Log("Game is resumed");
         pauseScreen.SetActive(false);
+        Debug.Log("Game is resumed");
     }
 
     public void OnPauseMenu(InputValue button)

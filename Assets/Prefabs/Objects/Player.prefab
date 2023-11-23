@@ -93,11 +93,12 @@ MonoBehaviour:
   jumpBuffer: 0.1
   jumpCutMultiplier: 0.5
   jumpCutWindow: 1
+  dJMultiplier: 2
   coyoteTimeWindow: 0.05
   wallJumpXmultiplier: 15
-  dashSpeed: 50
+  dashSpeed: 35
   dashAngleMultiplier: 0.3
-  bounceMultiplier: 1.2
+  bounceMultiplier: 1.1
   tpPosition: {fileID: 4023329124467211263}
   tpPositionMultiplier: 5
 --- !u!50 &1577747123343814229
@@ -214,7 +215,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 0d13806e6d7cfe643903c37bda11de09, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
