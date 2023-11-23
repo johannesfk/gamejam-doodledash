@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpBuffer = 0.1f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
     [SerializeField] private float jumpCutWindow = 1f;
+    [SerializeField] private float dJMultiplier = 2;
     [SerializeField] private float coyoteTimeWindow = 0.05f;
     private float jumpBufferTimer;
     private float coyoteTimeTimer;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private bool jumpCutted = false;
     private bool isGrounded;
     private bool isJumping;
+    private bool canBuffer;
 
     [Header("PowerUp Settings")]
     [SerializeField] private float wallJumpXmultiplier = 15;
@@ -45,12 +47,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bounceMultiplier = 1.2f;
     [SerializeField] private GameObject tpPosition;
     [SerializeField] private float tpPositionMultiplier = 5;
-
     private bool touchingWall = false;
     private bool bounceActivated = false;
     private float bouncePower;
     private PowerType nextPower;
     private Vector3 wallPos;
+
 
     private void Awake()
     {
@@ -84,7 +86,6 @@ public class PlayerController : MonoBehaviour
         var ps = dust.main;
         ps.startColor = platformColor;
 
-
         #region This Code was made with this tutorial: https://www.youtube.com/watch?v=KbtcEVCM7bw
         //Calculating next direction of movement
         float nextMove = movement.x * speed;
@@ -105,6 +106,8 @@ public class PlayerController : MonoBehaviour
         float moveAction = Mathf.Pow(Mathf.Abs(speedDif) * accelerationRate, speedPower) * Mathf.Sign(speedDif);
 
         rb.AddForce(moveAction * Vector2.right);
+        print(rb.velocity.x);
+
         #endregion
 
         if (rb.velocity.y < 0)
@@ -119,15 +122,16 @@ public class PlayerController : MonoBehaviour
         if (jumpBufferTimer > 0)
         {
             jumpBufferTimer -= Time.fixedDeltaTime;
-            if (isGrounded)
+            
+            if (canBuffer)
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 Debug.Log("JUMP BUFFERED");
                 isJumping = true;
-                isGrounded = false;
-
+                canBuffer = false;
             }
         }
+
 
         if (jumpCutTimer > 0)
         {
@@ -214,7 +218,9 @@ public class PlayerController : MonoBehaviour
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
+
             jumpBufferTimer = jumpBuffer;
+            
         }
 
     }
@@ -253,17 +259,21 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 case PowerType.DoubleJump:
-                    if (!isGrounded && isJumping)
-                    {
+                    if (!isGrounded)
+                    {   
                         Debug.Log("DOUBLE JUMP MOVE");
 
-                        rb.AddForce(Vector2.up * jumpForce + Vector2.up * Mathf.Abs(rb.velocity.y), ForceMode2D.Impulse);
+                        if (rb.velocity.y < 0)
+                        {
 
-
+                            rb.AddForce(Vector2.up * jumpForce * dJMultiplier, ForceMode2D.Impulse);
+                            
+                        }
+                        else
+                        {   
+                            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                        }
                         cardStack.Use();
-
-
-
                     }
                     break;
 
@@ -311,6 +321,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            canBuffer = true;
             isGrounded = true;
             isJumping = false;
             jumpCutted = false;
@@ -343,6 +354,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
             jumpCutted = false;
+            canBuffer = false;
 
             if (isJumping == false)
             {
