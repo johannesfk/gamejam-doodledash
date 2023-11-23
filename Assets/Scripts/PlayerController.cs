@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 rb.AddForce(Vector2.up * bouncePower * bounceMultiplier, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Bounce");
                 bounceActivated = false;
                 Debug.Log(bouncePower);
             }
@@ -199,6 +200,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Jump");
                 CreateDust();
                 isGrounded = false;
             }
