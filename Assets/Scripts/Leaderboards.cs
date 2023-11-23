@@ -8,15 +8,27 @@ using UnityEngine;
 
 public class Leaderboards : MonoBehaviour
 {
-  const string LeaderboardId = "lv1";
+  // string LeaderboardId = "lv1";
   string VersionId { get; set; }
   int Offset { get; set; }
   int Limit { get; set; }
   int RangeLimit { get; set; }
   List<string> FriendIds { get; set; }
 
+  public static Leaderboards instance;
+
   async void Awake()
   {
+    if (instance != null)
+    {
+      Destroy(gameObject);
+    }
+    else
+    {
+      instance = this;
+
+      DontDestroyOnLoad(gameObject);
+    }
     await UnityServices.InitializeAsync();
 
     await SignInAnonymously();
@@ -26,7 +38,7 @@ public class Leaderboards : MonoBehaviour
   {
     AuthenticationService.Instance.SignedIn += () =>
     {
-      Debug.Log("Signed in as: " + AuthenticationService.Instance.PlayerId);
+      Debug.Log("Signed in as: " + AuthenticationService.Instance.PlayerId + " with display name: " + AuthenticationService.Instance.PlayerName);
     };
     AuthenticationService.Instance.SignInFailed += s =>
     {
@@ -35,22 +47,24 @@ public class Leaderboards : MonoBehaviour
     };
 
     await AuthenticationService.Instance.SignInAnonymouslyAsync();
+    await AuthenticationService.Instance.UpdatePlayerNameAsync(PlayerPrefs.GetString("User_name", ""));
   }
 
-  public async void AddScore(int score)
+  public async void AddScore(string LeaderboardId, float score)
   {
+    Debug.Log("Adding score to cloud");
     var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(LeaderboardId, score);
     Debug.Log(JsonConvert.SerializeObject(scoreResponse));
   }
 
-  public async void GetScores()
+  public async void GetScores(string LeaderboardId)
   {
     var scoresResponse =
         await LeaderboardsService.Instance.GetScoresAsync(LeaderboardId);
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
-  public async void GetPaginatedScores()
+  public async void GetPaginatedScores(string LeaderboardId)
   {
     Offset = 10;
     Limit = 10;
@@ -59,21 +73,21 @@ public class Leaderboards : MonoBehaviour
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
-  public async void GetPlayerScore()
+  public async void GetPlayerScore(string LeaderboardId)
   {
     var scoreResponse =
         await LeaderboardsService.Instance.GetPlayerScoreAsync(LeaderboardId);
     Debug.Log(JsonConvert.SerializeObject(scoreResponse));
   }
 
-  public async void GetPlayerRange()
+  public async void GetPlayerRange(string LeaderboardId)
   {
     var scoresResponse =
         await LeaderboardsService.Instance.GetPlayerRangeAsync(LeaderboardId, new GetPlayerRangeOptions { RangeLimit = RangeLimit });
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
-  public async void GetScoresByPlayerIds()
+  public async void GetScoresByPlayerIds(string LeaderboardId)
   {
     var scoresResponse =
         await LeaderboardsService.Instance.GetScoresByPlayerIdsAsync(LeaderboardId, FriendIds);
@@ -84,7 +98,7 @@ public class Leaderboards : MonoBehaviour
   // this call will return the list of archived versions available to read from,
   // in reverse chronological order (so e.g. the first entry is the archived version
   // containing the most recent scores)
-  public async void GetVersions()
+  public async void GetVersions(string LeaderboardId)
   {
     var versionResponse =
         await LeaderboardsService.Instance.GetVersionsAsync(LeaderboardId);
@@ -94,14 +108,14 @@ public class Leaderboards : MonoBehaviour
     Debug.Log(JsonConvert.SerializeObject(versionResponse));
   }
 
-  public async void GetVersionScores()
+  public async void GetVersionScores(string LeaderboardId)
   {
     var scoresResponse =
         await LeaderboardsService.Instance.GetVersionScoresAsync(LeaderboardId, VersionId);
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
-  public async void GetPaginatedVersionScores()
+  public async void GetPaginatedVersionScores(string LeaderboardId)
   {
     Offset = 10;
     Limit = 10;
@@ -110,7 +124,7 @@ public class Leaderboards : MonoBehaviour
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
-  public async void GetPlayerVersionScore()
+  public async void GetPlayerVersionScore(string LeaderboardId)
   {
     var scoreResponse =
         await LeaderboardsService.Instance.GetVersionPlayerScoreAsync(LeaderboardId, VersionId);

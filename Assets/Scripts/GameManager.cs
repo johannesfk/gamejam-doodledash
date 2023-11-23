@@ -29,6 +29,13 @@ public class GameManager : MonoBehaviour
 
     private float score = 0f;
 
+    private Dictionary<string, string> levelMap;
+
+    TextMeshProUGUI userNameText;
+
+    Leaderboards leaderboards;
+
+
     private void Awake()
     {
         /* if (Instance != null)
@@ -45,12 +52,27 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        levelMap = new Dictionary<string, string>
+        {
+            { "Level 1", "lv1" },
+            { "Level 2", "lv2" },
+            { "Level 3", "lv3" },
+            { "Level 4", "lv4" },
+            { "Level 5", "lv5" },
+            { "Level 6", "lv6" },
+            { "Level 7", "lv7" },
+            { "Level 8", "lv8" }
+        };
         levelLoader = GameObject.Find("LevelLoader");
         baseUI = GameObject.Find("Base Level UI");
         transition = levelLoader.GetComponentInChildren<Animator>();
         highScoreText = GameObject.Find("HighScoreText").GetComponent<TextMeshProUGUI>();
         timerText = GameObject.Find("CurrentTime").GetComponent<TextMeshProUGUI>();
         sessionTimeText = GameObject.Find("SessionTime").GetComponent<TextMeshProUGUI>();
+
+        userNameText = GameObject.Find("UserName").GetComponent<TextMeshProUGUI>();
+
+        userNameText.text = PlayerPrefs.GetString("User_name", "");
 
         pauseScreen = GameObject.Find("PauseMenu");
         levelComplete = GameObject.Find("LevelCompleteMenu");
@@ -71,6 +93,8 @@ public class GameManager : MonoBehaviour
         pauseScreen.SetActive(false);
         levelComplete.SetActive(false);
         levelLoader.SetActive(false);
+
+        leaderboards = GameObject.Find("Leaderboards").GetComponent<Leaderboards>();
     }
 
 
@@ -183,12 +207,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Checking High Score");
         Debug.Log("Score " + score);
+        Debug.Log("Adding score: " + score + " to leaderboard: " + levelMap[SceneManager.GetActiveScene().name]);
+        leaderboards.AddScore(levelMap[SceneManager.GetActiveScene().name], score);
         if (!PlayerPrefs.HasKey("HighScore-" + SceneManager.GetActiveScene().name))
         {
             Debug.Log("Creating key");
             PlayerPrefs.SetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999);
             Debug.Log("Key set: " + PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999));
+            // leaderboards.instance.AddScore(levelMap[SceneManager.GetActiveScene().name], score);
+
+            Debug.Log("Adding score: " + score + " to leaderboard: " + levelMap[SceneManager.GetActiveScene().name]);
+            leaderboards.AddScore(levelMap[SceneManager.GetActiveScene().name], score);
         }
+
         else
         {
             if (score < PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999))
