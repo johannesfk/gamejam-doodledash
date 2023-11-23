@@ -6,7 +6,7 @@ public class CardCollectableCard : MonoBehaviour
 {
     [SerializeField]
     private PowerType power;
-    // [SerializeField]
+    //[SerializeField]
     private CardStack cardStack;
 
     private CardStyles cardStyles;
