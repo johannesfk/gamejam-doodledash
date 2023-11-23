@@ -18,7 +18,7 @@ public enum PowerType
 public class CardStack : MonoBehaviour
 {
     public CardUIManager cardUIManager;
-    
+
 
     public void Add(PowerType power)
     {
