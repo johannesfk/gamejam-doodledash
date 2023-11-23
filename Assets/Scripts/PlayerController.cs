@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isJumping;
     private bool canBuffer;
+    private bool isIdle;
 
     [Header("PowerUp Settings")]
     [SerializeField] private float wallJumpXmultiplier = 15;
@@ -91,8 +92,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        /* animator.SetFloat("VelocityX", movement.x);
-        animator.SetFloat("VelocityY", rb.velocity.y); */
+        animator.SetFloat("VelocityX", movement.x);
+        animator.SetBool("Jumping", isJumping);
+        animator.SetBool("Idle", isIdle); 
 
         var ps = dust.main;
         ps.startColor = platformColor;
@@ -104,6 +106,17 @@ public class PlayerController : MonoBehaviour
         if (movement.x > 0)
         {
             transform.localScale = Vector3.one;
+        }
+        if (!isJumping)
+        {
+            if (movement.x == 0)
+            {
+                isIdle = true;
+            }
+        }
+        else
+        {
+            isIdle = false;
         }
 
         #region This Code was made with this tutorial: https://www.youtube.com/watch?v=KbtcEVCM7bw
