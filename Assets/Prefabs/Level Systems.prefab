@@ -472,6 +472,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 296976505425203435, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
   m_PrefabInstance: {fileID: 2901246973712604418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4990544275559408764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7855040070678673790, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+  m_PrefabInstance: {fileID: 2901246973712604418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5427437686690428998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7138606807128286532, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+  m_PrefabInstance: {fileID: 2901246973712604418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3125788993946964678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -754,6 +764,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8409130341456363861, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
   m_PrefabInstance: {fileID: 7698623803037610225}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3296553361443041999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5145560897414152766, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+  m_PrefabInstance: {fileID: 7698623803037610225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7929324189411807390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -802,6 +817,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3314470544677206820, guid: c34ee8db94213b64d9ee5148ab50d2ad, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 3296553361443041999}
+    - target: {fileID: 3314470544677206820, guid: c34ee8db94213b64d9ee5148ab50d2ad, type: 3}
+      propertyPath: levelComplete
+      value: 
+      objectReference: {fileID: 5427437686690428998}
+    - target: {fileID: 3314470544677206820, guid: c34ee8db94213b64d9ee5148ab50d2ad, type: 3}
+      propertyPath: GameOverBackground
+      value: 
+      objectReference: {fileID: 4990544275559408764}
     - target: {fileID: 5103482669848607295, guid: c34ee8db94213b64d9ee5148ab50d2ad, type: 3}
       propertyPath: m_Name
       value: GameManager

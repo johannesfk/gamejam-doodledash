@@ -4347,7 +4347,7 @@ PrefabInstance:
     - target: {fileID: 4897034783096794042, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: pauseScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5145560897414152766, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
     - target: {fileID: 4897034783096794042, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: highScoreText
       value: 
