@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("VelocityX", movement.x);
         animator.SetBool("Jumping", isJumping);
-        animator.SetBool("Idle", isIdle); 
+        animator.SetBool("Idle", isIdle);
 
         var ps = dust.main;
         ps.startColor = platformColor;
@@ -109,8 +109,8 @@ public class PlayerController : MonoBehaviour
         }
         if (!isJumping && movement.x == 0)
         {
-  
-                isIdle = true;
+
+            isIdle = true;
         }
         else
         {
@@ -413,6 +413,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Collectable"))
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Card"))
         {
             Destroy(collision.gameObject);
         }
