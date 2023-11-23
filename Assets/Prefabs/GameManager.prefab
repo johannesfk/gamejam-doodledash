@@ -50,6 +50,7 @@ MonoBehaviour:
   timerText: {fileID: 650992138806516819, guid: 78c8cbc80abee8d4ba0ff9563eb04657, type: 3}
   timer: 0
   pauseScreen: {fileID: 0}
+  levelComplete: {fileID: 0}
   GameOverBackground: {fileID: 0}
 --- !u!114 &5454906430302362534
 MonoBehaviour:
