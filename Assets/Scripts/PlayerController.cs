@@ -232,6 +232,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("Jump");
             }
 
             jumpBufferTimer = jumpBuffer;
@@ -266,7 +267,7 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("DASH MOVE");
 
                         rb.AddForce(Vector2.right * movement * dashSpeed + Vector2.up * dashAngleMultiplier, ForceMode2D.Impulse);
-
+                        FindObjectOfType<AudioManager>().Play("Dash");
                         cardStack.Use();
                     }
 
@@ -277,11 +278,12 @@ public class PlayerController : MonoBehaviour
                     if (!isGrounded)
                     {
                         Debug.Log("DOUBLE JUMP MOVE");
-
+                        FindObjectOfType<AudioManager>().Play("Jump");
                         if (rb.velocity.y < 0)
                         {
 
                             rb.AddForce(Vector2.up * jumpForce * dJMultiplier, ForceMode2D.Impulse);
+
 
                         }
                         else
@@ -301,7 +303,7 @@ public class PlayerController : MonoBehaviour
                         float wallJumpXDirection = Mathf.Sign(gameObject.transform.position.x - wallPos.x);
 
                         rb.AddForce(Vector2.up * jumpForce + Vector2.right * wallJumpXDirection * wallJumpXmultiplier, ForceMode2D.Impulse);
-
+                        FindObjectOfType<AudioManager>().Play("Jump");
                         cardStack.Use();
                     }
 
@@ -311,6 +313,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("TP MOVE");
 
                     transform.position = tpPosition.transform.position;
+                    FindObjectOfType<AudioManager>().Play("Teleport");
                     cardStack.Use();
 
 
