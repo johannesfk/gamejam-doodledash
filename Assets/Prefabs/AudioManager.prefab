@@ -63,3 +63,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Eraser
+    clip: {fileID: 8300000, guid: 7a34737b0fa919247a06d6e4e3f863f5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
