@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7155582034630602904}
   - component: {fileID: 5599197535427959827}
-  - component: {fileID: -4092860593830314547}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -88,28 +87,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: MainMenu
-    clip: {fileID: 8300000, guid: 79e04c97bae9fe141a83617c49430f89, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
   - name: WinSound
     clip: {fileID: 8300000, guid: 6de7039f934a7d7438cfb463c267915a, type: 3}
     volume: 0.69
     pitch: 1
     loop: 0
     source: {fileID: 0}
---- !u!114 &-4092860593830314547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5515465621740070684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2d6544e1e58ee48aec94c72bdab483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songName: MainMenu
