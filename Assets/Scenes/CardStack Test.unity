@@ -311,7 +311,9 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
   - power: 3
     color: {r: 0, g: 0, b: 0, a: 0}
-  - power: 6
+  - power: 1
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - power: 4
     color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
