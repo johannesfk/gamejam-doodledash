@@ -1170,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6980829569317851108, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 995406483}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3309,6 +3313,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
   m_PrefabInstance: {fileID: 4690147}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &995406483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7197772477823050614, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
+  m_PrefabInstance: {fileID: 1282702424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &996099629
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,7 +4352,7 @@ PrefabInstance:
     - target: {fileID: 2401123667730592846, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
       propertyPath: cardStack
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1341629834}
     - target: {fileID: 2401123667730592846, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
       propertyPath: dashSpeed
       value: 35
@@ -4544,6 +4553,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 949587400114159426, guid: 0e93f03569614ad44aa2048bd7884162, type: 3}
   m_PrefabInstance: {fileID: 1093724851}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1341629834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5148142450417931071, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+  m_PrefabInstance: {fileID: 337213094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57efc35ee6950de42b8f84b70fefd19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1355373728
 GameObject:
   m_ObjectHideFlags: 0
