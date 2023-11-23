@@ -6,7 +6,7 @@ public class MusicManager : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    void Awake()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
