@@ -16,11 +16,12 @@ public class ReadInput : MonoBehaviour
     }
     public void SetName()
     {
-        if (user_inputfield != null)
+        if (user_inputfield.text != "")
         {
             obj_name.text = user_inputfield.text;
             PlayerPrefs.SetString("User_name", obj_name.text);
             PlayerPrefs.Save();
+            Debug.Log("Username saved: " + PlayerPrefs.GetString("User_name"));
         }
         else
         {

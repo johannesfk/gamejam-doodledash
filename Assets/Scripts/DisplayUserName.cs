@@ -10,7 +10,7 @@ public class DisplayUserName : MonoBehaviour
 
     void Start()
     {
-        obj_text.text = PlayerPrefs.GetString("User_name");
+        obj_text.text = PlayerPrefs.GetString("User_name", "");
 
     }
     public void DisplayText()

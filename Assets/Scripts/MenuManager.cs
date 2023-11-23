@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        FindObjectOfType<AudioManager>().Play("MainMenu");
+        // FindObjectOfType<AudioManager>().Play("MainMenu");
     }
 
     public void StartGame()
