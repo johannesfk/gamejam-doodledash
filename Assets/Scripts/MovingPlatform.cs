@@ -17,7 +17,7 @@ public class MovingPlatform : MonoBehaviour
     }
     void Update()
     {
-        if (Vector2.Distance(transform.position, points[i].position) < 0.2f) 
+        if (Vector2.Distance(transform.position, points[i].position) < 0.02f) 
         {
             i++;
             if (i == points.Length)
@@ -29,14 +29,12 @@ public class MovingPlatform : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (transform.position.y < collision.transform.position.y-0.5f) 
-        {
             collision.transform.SetParent(transform);
-        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         collision.transform.SetParent(null);
+        Debug.Log("I left");
     }
 }
 
