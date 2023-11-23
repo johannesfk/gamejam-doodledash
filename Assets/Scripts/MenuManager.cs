@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour
     public void RestartCurrentLevel()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        Time.timeScale = 1;
         SceneManager.LoadScene(currentScene.name);
         Debug.Log("Restarting " + currentScene.name);
     }
