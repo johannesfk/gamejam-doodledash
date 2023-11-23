@@ -416,10 +416,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectable"))
         {
             Destroy(collision.gameObject);
+            FindObjectOfType<AudioManager>().Play("PickUp");
         }
         if (collision.gameObject.CompareTag("Card"))
         {
             Destroy(collision.gameObject);
+            FindObjectOfType<AudioManager>().Play("StickyNoteRemoval");
         }
         /*  if (collision.gameObject.CompareTag("Exit"))
          {
