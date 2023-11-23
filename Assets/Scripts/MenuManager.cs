@@ -50,4 +50,11 @@ public class MenuManager : MonoBehaviour
     {
         SelectLevel(levelIndex + 1);
     }
+
+    public void RemoveStickyNote()
+    {
+        FindObjectOfType<AudioManager>().Play("StickyNoteRemoval");
+    }
+
+
 }
