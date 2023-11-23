@@ -135,10 +135,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //PowerUps
-        /* if (cardStack.cards.Count > 0)
-        {
+         if (cardStack.cards.Count > 0)
+         {
             nextPower = cardStack.cards[0].power;
-        } */
+         }
 
         if (bounceActivated)
         {
