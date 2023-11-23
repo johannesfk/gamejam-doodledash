@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (!isJumping)
+            if (!isJumping && !isRunning)
             {
                 idleState = true;
                 isRunning = false;
