@@ -140,10 +140,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //PowerUps
-         if (cardStack.cards.Count > 0)
-         {
+        if (cardStack.cards.Count > 0)
+        {
             nextPower = cardStack.cards[0].power;
-         }
+        }
 
         if (bounceActivated)
         {
@@ -375,7 +375,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Exit"))
         {
             Debug.Log("Du ramte exit");
-            Debug.Log(Collectables.allCollected);
+            // Debug.Log(Collectables.allCollected);
             if (Collectables.allCollected)
             {
                 hasWon = true; // To prevent multiple win states - Debounce
@@ -386,6 +386,6 @@ public class PlayerController : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
-    } 
+    }
 
 }
