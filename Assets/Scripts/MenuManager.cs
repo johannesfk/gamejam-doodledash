@@ -38,6 +38,12 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         Debug.Log("Loading Menu");
     }
+    public void LevelSelector()
+    {
+        SceneManager.LoadScene("Level Selector");
+        Debug.Log("Level Selector");
+    }
+
     public void SelectLevel(int level)
     {
         levelName = "Level " + level;

@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dust: {fileID: 8873932184733507707}
-  cardStack: {fileID: 0}
+  cardStack: {fileID: 7786979732440859129, guid: 3879b99ae74e1aa44b06f5a71bf21495, type: 3}
   speed: 15
   speedPower: 0.9
   acceleration: 4
