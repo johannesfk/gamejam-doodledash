@@ -90,6 +90,13 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(time % 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+    string FormatTimeMillisec(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        int milliseconds = Mathf.FloorToInt(time % 1 * 1000);
+        return string.Format("{0:00}:{1:00}.{2:000}", minutes, seconds, milliseconds);
+    }
     void Update()
     {
         /* int minutes = Mathf.FloorToInt(timer / 60);
@@ -166,8 +173,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            highScoreText.text = $"HighScore: {PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0)}";
-            sessionTimeText.text = FormatTime(score);
+            highScoreText.text = $"HighScore: {FormatTimeMillisec(PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0))}";
+            sessionTimeText.text = FormatTimeMillisec(score);
         }
     }
 
