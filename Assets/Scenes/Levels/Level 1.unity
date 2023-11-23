@@ -4354,28 +4354,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1341629834}
     - target: {fileID: 2401123667730592846, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
-      propertyPath: dashSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2401123667730592846, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
-      propertyPath: bounceMultiplier
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2401123667730592846, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
       propertyPath: doubleJumpTimerMax
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3289607892699968724, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3289607892699968724, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3289607892699968724, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
-      propertyPath: m_Color.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7197772477823050614, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
       propertyPath: m_Name
