@@ -58,7 +58,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: StickyNoteRemoval
-    clip: {fileID: 8300000, guid: 26ecf0145b322c44389da321b79b0f26, type: 3}
+    clip: {fileID: 8300000, guid: b6de12e2ccc455f438d8a52bb84b6de0, type: 3}
     volume: 0.8
     pitch: 1
     loop: 0
@@ -77,6 +77,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Teleport
     clip: {fileID: 8300000, guid: 01d1963ff9707364488d34230a0a7e1b, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: ccccb49e901aee74181f3978d4d5a7fe, type: 3}
     volume: 0.8
     pitch: 1
     loop: 0
