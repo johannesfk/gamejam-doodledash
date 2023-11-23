@@ -46,11 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
-  highScoreText: {fileID: 0}
-  timerText: {fileID: 650992138806516819, guid: 78c8cbc80abee8d4ba0ff9563eb04657, type: 3}
   timer: 0
-  pauseScreen: {fileID: 0}
-  levelComplete: {fileID: 0}
+  pauseScreen: {fileID: 5145560897414152766, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+  levelComplete: {fileID: 7138606807128286532, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
   GameOverBackground: {fileID: 0}
 --- !u!114 &5454906430302362534
 MonoBehaviour:
