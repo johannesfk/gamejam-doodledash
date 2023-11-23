@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 318979755972907340}
   - component: {fileID: 1616853313500633147}
   m_Layer: 0
-  m_Name: CardCollectable
+  m_Name: CollectableCard
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

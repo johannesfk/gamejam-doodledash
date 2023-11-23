@@ -177,10 +177,10 @@ public class PlayerController : MonoBehaviour
         movement = input.Get<Vector2>();
 
 
-        /* if (isGrounded)
+        if (isGrounded)
         {
             CreateDust();
-        } */
+        }
 
     }
 
@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                // CreateDust();
+                CreateDust();
                 isGrounded = false;
             }
         }
@@ -367,9 +367,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /* void CreateDust()
+    void CreateDust()
     {
         dust.Play();
-    } */
+    } 
 
 }
