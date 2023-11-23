@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level Complete");
         score = timer;
+        FindObjectOfType<AudioManager>().Play("WinSound");
         levelLoader.SetActive(true);
         baseUI.SetActive(false);
         transition.SetTrigger("Start");
@@ -173,8 +174,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            highScoreText.text = $"HighScore: {FormatTimeMillisec(PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0))}";
-            sessionTimeText.text = FormatTimeMillisec(score);
+            highScoreText.text = $"Highscore: {FormatTimeMillisec(PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0))}";
+            sessionTimeText.text = $"Your time: {FormatTimeMillisec(score)}";
         }
     }
 
