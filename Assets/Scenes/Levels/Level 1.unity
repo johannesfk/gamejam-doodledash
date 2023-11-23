@@ -1210,6 +1210,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5148142450417931071, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: cards.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148142450417931071, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: cards.Array.data[1].power
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148142450417931071, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: cards.Array.data[2].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148142450417931071, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: cards.Array.data[3].power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148142450417931071, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: cards.Array.data[4].power
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6980829569317851108, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: player
       value: 

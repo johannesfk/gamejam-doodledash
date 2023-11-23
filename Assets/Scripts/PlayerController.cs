@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private GameActions playerControls;
     private InputAction jumpAction;
     private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 movement;
 
     public CardStack cardStack;
@@ -53,10 +54,10 @@ public class PlayerController : MonoBehaviour
     private PowerType nextPower;
     private Vector3 wallPos;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         playerControls = new GameActions();
         jumpAction = playerControls.Movement.Jump;
 
@@ -80,10 +81,19 @@ public class PlayerController : MonoBehaviour
     {
         gravityScale = rb.gravityScale;
         isJumping = false;
+
+        
+
     }
+
+
 
     private void FixedUpdate()
     {
+
+        animator.SetFloat("VelocityX", movement.x);
+        animator.SetFloat("VelocityY", rb.velocity.y);
+
         var ps = dust.main;
         ps.startColor = platformColor;
 

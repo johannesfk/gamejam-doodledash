@@ -153,6 +153,7 @@ public class GameManager : MonoBehaviour
         levelLoader.SetActive(true);
         baseUI.SetActive(false);
         transition.SetTrigger("Start");
+        FindObjectOfType<AudioManager>().Play("Eraser");
 
         StartLoadingAnimation();
 
