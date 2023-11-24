@@ -5325,6 +5325,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4572841905925777080, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 850.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 4897034783096794042, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: levelComplete
       value: 
@@ -5385,6 +5389,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2067527561}
+    - target: {fileID: 6980829569317851108, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: OffsetY
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 6980829569317851108, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: movingUpCamera
       value: 1
