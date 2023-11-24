@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-
+using ScoresResponse = Unity.Services.Leaderboards.Models.LeaderboardScores;
+using ScoresResponsePage = Unity.Services.Leaderboards.Models.LeaderboardScoresPage;
 
 
 public class GameManager : MonoBehaviour
@@ -190,6 +191,14 @@ public class GameManager : MonoBehaviour
 
         highScoreKey = "HighScore-" + SceneManager.GetActiveScene().name + "-" + PlayerPrefs.GetString("User_name", "");
         highScore = PlayerPrefs.GetFloat(highScoreKey, 999999f);
+
+        // Debug.Log("Global Highscore: ");
+        // Debug.Log("top score " + leaderboards.GetTopScore(levelMap[SceneManager.GetActiveScene().name]));
+        // leaderboards.GetScores(levelMap[SceneManager.GetActiveScene().name]);
+
+        /* Debug.Log("Checking High Score");
+        leaderboards.GetTopScore(levelMap[SceneManager.GetActiveScene().name]);
+        Debug.Log("Got Cloud Highscore: " + leaderboards.highScore); */
 
         StartCoroutine(CheckHighScore());
     }

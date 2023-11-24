@@ -17,6 +17,8 @@ public class Leaderboards : MonoBehaviour
 
   public static Leaderboards instance;
 
+  public float highScore;
+
   async void Awake()
   {
     if (instance != null)
@@ -69,12 +71,20 @@ public class Leaderboards : MonoBehaviour
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
-  public async void GetPaginatedScores(string LeaderboardId)
+  public async void GetPaginatedScores(string LeaderboardId, int Offset, int Limit)
   {
-    Offset = 10;
-    Limit = 10;
+    /* Offset = 10;
+    Limit = 10; */
     var scoresResponse =
         await LeaderboardsService.Instance.GetScoresAsync(LeaderboardId, new GetScoresOptions { Offset = Offset, Limit = Limit });
+    Debug.Log(JsonConvert.SerializeObject(scoresResponse));
+  }
+
+  public async void GetTopScore(string LeaderboardId)
+  {
+    var scoresResponse =
+        await LeaderboardsService.Instance.GetScoresAsync(LeaderboardId, new GetScoresOptions { Limit = 1 });
+    highScore = (float)scoresResponse.Results[0].Score;
     Debug.Log(JsonConvert.SerializeObject(scoresResponse));
   }
 
