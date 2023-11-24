@@ -72,6 +72,8 @@ public class GameManager : MonoBehaviour
 
         userNameText = GameObject.Find("UserName").GetComponent<TextMeshProUGUI>();
 
+        leaderboards = GameObject.Find("Leaderboards").GetComponent<Leaderboards>();
+
         userNameText.text = PlayerPrefs.GetString("User_name", "");
 
         pauseScreen = GameObject.Find("PauseMenu");
@@ -94,7 +96,7 @@ public class GameManager : MonoBehaviour
         levelComplete.SetActive(false);
         levelLoader.SetActive(false);
 
-        leaderboards = GameObject.Find("Leaderboards").GetComponent<Leaderboards>();
+
     }
 
 

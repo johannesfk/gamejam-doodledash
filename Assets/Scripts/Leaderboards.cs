@@ -50,11 +50,16 @@ public class Leaderboards : MonoBehaviour
 
     await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
-    string PlayerName = PlayerPrefs.GetString("User_name", "");
-    if (PlayerName != "")
+    if (AuthenticationService.Instance.PlayerName == null)
     {
-      await AuthenticationService.Instance.UpdatePlayerNameAsync(PlayerName);
+      string PlayerName = PlayerPrefs.GetString("User_name", "").Trim().ToLower();
+
+      if (PlayerName != "")
+      {
+        await AuthenticationService.Instance.UpdatePlayerNameAsync(PlayerName);
+      }
     }
+
   }
 
   public async void AddScore(string LeaderboardId, float score)

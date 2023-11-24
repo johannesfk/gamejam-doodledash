@@ -7,28 +7,29 @@ public class CameraController : MonoBehaviour
 
     public GameObject player;
     [SerializeField] bool movingCamera;
-    [SerializeField] float offset = 1;
+    [SerializeField] float offsetX = 0;
+    [SerializeField] float OffsetY = 0;
     [SerializeField] bool movingUpCamera;
 
     private Vector3 cameraPos;
 
     private void Update()
-    {   
+    {
         if (movingCamera)
         {
             if (movingUpCamera)
             {
-                cameraPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+                cameraPos = new Vector3(player.transform.position.x - offsetX, player.transform.position.y - OffsetY, transform.position.z);
                 transform.position = cameraPos;
             }
             else
             {
-                cameraPos = new Vector3(player.transform.position.x - offset, transform.position.y, transform.position.z);
+                cameraPos = new Vector3(player.transform.position.x - offsetX, transform.position.y - OffsetY, transform.position.z);
                 transform.position = cameraPos;
 
             }
 
         }
-        
+
     }
 }

@@ -12,7 +12,7 @@ public class ReadInput : MonoBehaviour
     void Start()
     {
         string userName = PlayerPrefs.GetString("User_name", "");
-        Debug.Log("Username loaded: " + userName);
+        Debug.Log("Username loaded: " + userName.Trim());
         // obj_name.text = userName;
         user_inputfield.text = userName;
         user_inputfield.characterLimit = 10;
@@ -22,7 +22,7 @@ public class ReadInput : MonoBehaviour
         if (user_inputfield.text != "")
         {
             obj_name.text = user_inputfield.text;
-            PlayerPrefs.SetString("User_name", obj_name.text);
+            PlayerPrefs.SetString("User_name", obj_name.text.Trim());
             PlayerPrefs.Save();
             Debug.Log("Username saved: " + PlayerPrefs.GetString("User_name"));
         }
