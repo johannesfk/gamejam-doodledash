@@ -12,7 +12,7 @@ public class Collectables : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // Debug.Log("collectableCount: " + collectableCount);
+        Debug.Log("collectableCount: " + collectableCount);
         if (collectableCount < 1)
         {
             allCollected = true;

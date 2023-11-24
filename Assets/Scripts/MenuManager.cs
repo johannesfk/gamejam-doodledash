@@ -56,7 +56,7 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (levelIndex < 5)
+        if (levelIndex < 7)
         {
             SelectLevel(levelIndex + 1);
         }
