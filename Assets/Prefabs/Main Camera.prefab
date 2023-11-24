@@ -49,7 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7197772477823050614, guid: cda25baa02dd74648a31a5cd21677594, type: 3}
   movingCamera: 1
-  offset: -6
+  offsetX: 0
+  OffsetY: 0
+  movingUpCamera: 0
 --- !u!20 &2611510771959693976
 Camera:
   m_ObjectHideFlags: 0
