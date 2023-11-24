@@ -11,7 +11,10 @@ public class ReadInput : MonoBehaviour
 
     void Start()
     {
-        obj_name.text = PlayerPrefs.GetString("User_name");
+        string userName = PlayerPrefs.GetString("User_name", "");
+        Debug.Log("Username loaded: " + userName);
+        // obj_name.text = userName;
+        user_inputfield.text = userName;
         user_inputfield.characterLimit = 10;
     }
     public void SetName()

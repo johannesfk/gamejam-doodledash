@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-
+using ScoresResponse = Unity.Services.Leaderboards.Models.LeaderboardScores;
+using ScoresResponsePage = Unity.Services.Leaderboards.Models.LeaderboardScoresPage;
 
 
 public class GameManager : MonoBehaviour
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private GameObject levelLoader;
     private GameObject baseUI;
     private TextMeshProUGUI highScoreText;
+    private float highScore;
     private TextMeshProUGUI timerText;
     private TextMeshProUGUI sessionTimeText;
     public float timer;
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, string> levelMap;
 
     TextMeshProUGUI userNameText;
-
+    string highScoreKey;
     Leaderboards leaderboards;
 
 
@@ -188,18 +189,18 @@ public class GameManager : MonoBehaviour
 
         StartLoadingAnimation();
 
+        highScoreKey = "HighScore-" + SceneManager.GetActiveScene().name + "-" + PlayerPrefs.GetString("User_name", "");
+        highScore = PlayerPrefs.GetFloat(highScoreKey, 999999f);
+
+        // Debug.Log("Global Highscore: ");
+        // Debug.Log("top score " + leaderboards.GetTopScore(levelMap[SceneManager.GetActiveScene().name]));
+        // leaderboards.GetScores(levelMap[SceneManager.GetActiveScene().name]);
+
+        /* Debug.Log("Checking High Score");
+        leaderboards.GetTopScore(levelMap[SceneManager.GetActiveScene().name]);
+        Debug.Log("Got Cloud Highscore: " + leaderboards.highScore); */
+
         StartCoroutine(CheckHighScore());
-
-
-        if (highScoreText == null)
-        {
-            Debug.LogError("highScoreText is null");
-        }
-        else
-        {
-            highScoreText.text = $"Highscore: {FormatTimeMillisec(PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 0))}";
-            sessionTimeText.text = $"Your time: {FormatTimeMillisec(score)}";
-        }
     }
 
     IEnumerator CheckHighScore()
@@ -207,12 +208,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Checking High Score");
         Debug.Log("Score " + score);
         Debug.Log("Adding score: " + score + " to leaderboard: " + levelMap[SceneManager.GetActiveScene().name]);
-        leaderboards.AddScore(levelMap[SceneManager.GetActiveScene().name], score);
-        if (!PlayerPrefs.HasKey("HighScore-" + SceneManager.GetActiveScene().name))
+        if (!PlayerPrefs.HasKey(highScoreKey))
         {
             Debug.Log("Creating key");
-            PlayerPrefs.SetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999);
-            Debug.Log("Key set: " + PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999));
+            PlayerPrefs.SetFloat(highScoreKey, 999999f);
+            Debug.Log("Key set: " + highScore);
             // leaderboards.instance.AddScore(levelMap[SceneManager.GetActiveScene().name], score);
 
             Debug.Log("Adding score: " + score + " to leaderboard: " + levelMap[SceneManager.GetActiveScene().name]);
@@ -221,20 +221,47 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            if (score < PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999))
+            if (score < highScore && score > 0.1f)
             {
-                Debug.Log("New high score: " + score + " < " + PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999));
-                PlayerPrefs.SetFloat("HighScore-" + SceneManager.GetActiveScene().name, score);
-                Debug.Log("Key set: " + PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999));
+                Debug.Log("New high score: " + score + " < " + highScore);
+                PlayerPrefs.SetFloat(highScoreKey, score);
+                Debug.Log("Key set: " + highScore);
+                Debug.Log("Adding score: " + score + " to leaderboard: " + levelMap[SceneManager.GetActiveScene().name]);
+                leaderboards.AddScore(levelMap[SceneManager.GetActiveScene().name], score);
             }
             else
             {
                 Debug.Log("No new high score " + score);
-                Debug.Log("High score " + PlayerPrefs.GetFloat("HighScore-" + SceneManager.GetActiveScene().name, 999999999));
+                Debug.Log("High score " + highScore);
             }
         }
 
         PlayerPrefs.Save();
+
+        highScore = PlayerPrefs.GetFloat(highScoreKey, 999999f);
+
+        Debug.Log("Got Highscore: " + highScore);
+
+
+        if (highScoreText == null)
+        {
+            Debug.LogError("highScoreText is null");
+        }
+        else
+        {
+            Debug.Log("highScoreText is not null");
+            if (highScore > 0.1f && highScore < 999999f)
+            {
+                Debug.Log("Show Highscore: " + highScore);
+                highScoreText.text = $"Your best time: {FormatTimeMillisec(highScore)}";
+            }
+            else
+            {
+                Debug.Log("No Highscore");
+                highScoreText.text = $"Your Best time: None";
+            }
+            sessionTimeText.text = $"Your time: {FormatTimeMillisec(score)}";
+        }
         yield return null;
     }
 
