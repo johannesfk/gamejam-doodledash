@@ -514,16 +514,45 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LevelSelector
       objectReference: {fileID: 0}
+    - target: {fileID: 1345844822272538863, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 1345844822272538863, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 1345844822272538863, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540670832226512500, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 2540670832226512500, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 2540670832226512500, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5986726993528317085, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 4481679781226414155}
+    - target: {fileID: 6113407951888240509, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -124
+      objectReference: {fileID: 0}
     - target: {fileID: 7138606807128286532, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
       propertyPath: m_Name
       value: LevelCompleteMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7855040070678673790, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bacc7843e31a9794380517eeb0bdf9bc, type: 3}
@@ -784,6 +813,34 @@ PrefabInstance:
     - target: {fileID: 1689540718564639735, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1710644779465335075, guid: a007fdd5a2b8ce048aa82327efa49667, type: 2}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8553176830327009554, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
       propertyPath: m_Name
