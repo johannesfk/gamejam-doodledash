@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1606263816728448597, guid: 78c8cbc80abee8d4ba0ff9563eb04657, type: 3}
       propertyPath: m_Name
-      value: CurrentTimer
+      value: CurrentTime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
