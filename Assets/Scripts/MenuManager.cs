@@ -56,7 +56,14 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SelectLevel(levelIndex + 1);
+        if (levelIndex < 4)
+        {
+            SelectLevel(levelIndex + 1);
+        }
+        else
+        {
+            LevelSelector();
+        }
     }
 
     public void RemoveStickyNote()

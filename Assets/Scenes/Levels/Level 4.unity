@@ -6940,6 +6940,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4572841905925777080, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 850.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 4897034783096794042, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: levelComplete
       value: 
@@ -7012,6 +7016,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 9026808896044217171, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
     - {fileID: 5033888653926927601, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+    - {fileID: 179663619065168511, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
