@@ -1542,6 +1542,10 @@ PrefabInstance:
       propertyPath: levelComplete
       value: 
       objectReference: {fileID: 337213097}
+    - target: {fileID: 4897034783096794042, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+      propertyPath: GameOverBackground
+      value: 
+      objectReference: {fileID: 1140494575}
     - target: {fileID: 5033888653926927601, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3349,7 +3353,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -15
   m_Sprite: {fileID: 21300000, guid: f1df6e74c8350441597bbdcfe9f46157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5713,6 +5717,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1140494575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4604120898025640758, guid: 9aa9000ba8755dd43bbacc1e40b50fa2, type: 3}
+  m_PrefabInstance: {fileID: 337213094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1146032384
 GameObject:
   m_ObjectHideFlags: 0

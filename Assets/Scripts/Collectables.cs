@@ -6,9 +6,10 @@ public class Collectables : MonoBehaviour
 {
     public static int collectableCount;
     public static bool allCollected = false;
+   
     private void Start()
     {
-        collectableCount = FindObjectsOfType<Collectable>().Length;
+        collectableCount = GameObject.FindGameObjectsWithTag("Collectable").Length;      
     }
     private void FixedUpdate()
     {
@@ -17,6 +18,10 @@ public class Collectables : MonoBehaviour
         {
             allCollected = true;
             Debug.Log("Gå til exit!");
+        }
+        else
+        {
+            allCollected = false;
         }
     }
 }

@@ -33,6 +33,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(currentScene.name);
         Debug.Log("Restarting " + currentScene.name);
+        Collectables.allCollected = false;
     }
     public void MainMenu()
     {
@@ -52,6 +53,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
         Debug.Log("Loading " + levelName);
         levelIndex = level;
+        Collectables.allCollected = false;
     }
 
     public void NextLevel()

@@ -172,7 +172,6 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Transition is done");
         levelComplete.SetActive(true);
     }
     void StartLoadingAnimation()
@@ -193,6 +192,9 @@ public class GameManager : MonoBehaviour
 
         highScoreKey = "HighScore-" + SceneManager.GetActiveScene().name + "-" + PlayerPrefs.GetString("User_name", "");
         highScore = PlayerPrefs.GetFloat(highScoreKey, 999999f);
+
+        Collectables.allCollected = false;
+        Collectables.collectableCount = 1;
 
         // Debug.Log("Global Highscore: ");
         // Debug.Log("top score " + leaderboards.GetTopScore(levelMap[SceneManager.GetActiveScene().name]));
