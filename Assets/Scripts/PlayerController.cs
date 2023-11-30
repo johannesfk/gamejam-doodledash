@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
             if (canBuffer)
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                Debug.Log("JUMP BUFFERED");
+                //Debug.Log("JUMP BUFFERED");
                 FindObjectOfType<AudioManager>().Play("Jump");
                 isJumping = true;
                 canBuffer = false;
@@ -248,7 +248,7 @@ public class PlayerController : MonoBehaviour
         {
             if (coyoteTimeTimer > 0)
             {
-                Debug.Log("COYOTE JUMP MOVE");
+                //Debug.Log("COYOTE JUMP MOVE");
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -268,7 +268,7 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.y > 0 && jumpCutTimer > 0)
             {
                 jumpCutted = true;
-                Debug.Log("JumpCutted");
+                //Debug.Log("JumpCutted");
                 rb.AddForce(Vector2.down * rb.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
             }
         }
@@ -284,7 +284,7 @@ public class PlayerController : MonoBehaviour
 
                     if (movement.x != 0)
                     {
-                        Debug.Log("DASH MOVE");
+                        //Debug.Log("DASH MOVE");
 
                         rb.AddForce(Vector2.right * movement * dashSpeed + Vector2.up * dashAngleMultiplier, ForceMode2D.Impulse);
                         FindObjectOfType<AudioManager>().Play("Dash");
@@ -297,7 +297,7 @@ public class PlayerController : MonoBehaviour
                 case PowerType.DoubleJump:
                     if (!isGrounded)
                     {
-                        Debug.Log("DOUBLE JUMP MOVE");
+                        //Debug.Log("DOUBLE JUMP MOVE");
                         FindObjectOfType<AudioManager>().Play("Jump");
                         if (rb.velocity.y < 0)
                         {
@@ -318,7 +318,7 @@ public class PlayerController : MonoBehaviour
 
                     if (touchingWall)
                     {
-                        Debug.Log("WALL JUMP MOVE");
+                        //Debug.Log("WALL JUMP MOVE");
 
                         float wallJumpXDirection = Mathf.Sign(gameObject.transform.position.x - wallPos.x);
 
@@ -330,7 +330,7 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 case PowerType.Teleport:
-                    Debug.Log("TP MOVE");
+                    //Debug.Log("TP MOVE");
 
                     transform.position = tpPosition.transform.position;
                     FindObjectOfType<AudioManager>().Play("Teleport");
@@ -343,7 +343,7 @@ public class PlayerController : MonoBehaviour
 
                     if (!isGrounded)
                     {
-                        Debug.Log("BOUNCE MOVE");
+                        //Debug.Log("BOUNCE MOVE");
 
                         bounceActivated = true;
                         cardStack.Use();
@@ -384,7 +384,7 @@ public class PlayerController : MonoBehaviour
             wallPos = collision.transform.position;
 
 
-            Debug.Log("Væg Moment");
+            //Debug.Log("Væg Moment");
         }
     }
 
@@ -415,6 +415,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectable"))
         {
             Destroy(collision.gameObject);
+            Collectables.collectableCount--;
             FindObjectOfType<AudioManager>().Play("PickUp");
         }
         if (collision.gameObject.CompareTag("Card"))
@@ -438,7 +439,7 @@ public class PlayerController : MonoBehaviour
             // Debug.Log(Collectables.allCollected);
             if (Collectables.allCollected)
             {
-                hasWon = true; // To prevent multiple win states - Debounce
+                hasWon = true; // To prevent multiple win states - Debounce   
             }
         }
     }
