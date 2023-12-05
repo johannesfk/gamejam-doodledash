@@ -814,6 +814,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 807
       objectReference: {fileID: 0}
+    - target: {fileID: 7576819331530832197, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 509.99994
+      objectReference: {fileID: 0}
     - target: {fileID: 7633791078477718292, guid: 43ff8ee474c95464e8d4f06cb59ec200, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -1025,6 +1029,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3858413542003983521, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7530679331923332080, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1033,10 +1041,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
       objectReference: {fileID: 0}
+    - target: {fileID: 8409130341456363861, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409130341456363861, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409130341456363861, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409130341456363861, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8701114841538972586, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 7818690709399328348}
+    - target: {fileID: 8711794940610983201, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.005004883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711794940610983201, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0025024414
+      objectReference: {fileID: 0}
     - target: {fileID: 8845025998413915667, guid: 18bf0b184f4365f47947e2a1701cee67, type: 3}
       propertyPath: m_Camera
       value: 
