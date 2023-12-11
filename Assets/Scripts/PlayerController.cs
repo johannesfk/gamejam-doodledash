@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
             if (canBuffer)
             {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 //Debug.Log("JUMP BUFFERED");
                 FindObjectOfType<AudioManager>().Play("Jump");
@@ -251,6 +252,7 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log("COYOTE JUMP MOVE");
                 jumpCutTimer = jumpCutWindow;
                 isJumping = true;
+                rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 FindObjectOfType<AudioManager>().Play("Jump");
             }
@@ -299,17 +301,9 @@ public class PlayerController : MonoBehaviour
                     {
                         //Debug.Log("DOUBLE JUMP MOVE");
                         FindObjectOfType<AudioManager>().Play("Jump");
-                        if (rb.velocity.y < 0)
-                        {
 
-                            rb.AddForce(Vector2.up * jumpForce * dJMultiplier, ForceMode2D.Impulse);
-
-
-                        }
-                        else
-                        {
-                            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                        }
+                        rb.velocity = new Vector2(rb.velocity.x, 0);
+                        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                         cardStack.Use();
                     }
                     break;
@@ -321,7 +315,7 @@ public class PlayerController : MonoBehaviour
                         //Debug.Log("WALL JUMP MOVE");
 
                         float wallJumpXDirection = Mathf.Sign(gameObject.transform.position.x - wallPos.x);
-
+                        rb.velocity = new Vector2(rb.velocity.x, 0);
                         rb.AddForce(Vector2.up * jumpForce + Vector2.right * wallJumpXDirection * wallJumpXmultiplier, ForceMode2D.Impulse);
                         FindObjectOfType<AudioManager>().Play("Jump");
                         cardStack.Use();
