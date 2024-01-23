@@ -116,6 +116,15 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(time % 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    /// <summary>
+    /// Formats time in milliseconds to a string.
+    /// </summary>
+    /// <param name="time">Time in milliseconds</param>
+    /// <returns>
+    /// Format: mm:ss.mmm
+    /// Example: 01:23.456
+    /// </returns>
     string FormatTimeMillisec(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60);
@@ -123,6 +132,7 @@ public class GameManager : MonoBehaviour
         int milliseconds = Mathf.FloorToInt(time % 1 * 1000);
         return string.Format("{0:00}:{1:00}.{2:000}", minutes, seconds, milliseconds);
     }
+
     void Update()
     {
         /* int minutes = Mathf.FloorToInt(timer / 60);

@@ -34,6 +34,7 @@ public class CardStyles : MonoBehaviour
             [PowerType.Bounce] = bounceColor,
             [PowerType.Teleport] = teleportColor
         };
+
         cardSprites = new Dictionary<PowerType, Sprite>
         {
             [PowerType.Dash] = dashSprite,

@@ -9,7 +9,7 @@ public class Exit : MonoBehaviour
     {
         if (Collectables.allCollected == false)
         {
-            GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.25f);
+            GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.25f); // Green with 25% opacity
         }
     }
 
@@ -18,7 +18,10 @@ public class Exit : MonoBehaviour
     {
         if (Collectables.allCollected == true)
         {
-            GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1);
+            GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 1); // Green
         }
+
     }
+
+
 }

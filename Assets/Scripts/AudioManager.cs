@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-
     public Sound[] sounds;
 
-
+    
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -21,7 +20,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -32,3 +30,4 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 }
+

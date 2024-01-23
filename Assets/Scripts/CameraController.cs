@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
     public GameObject player;
-    [SerializeField] bool movingCamera;
     [SerializeField] float offsetX = 0;
     [SerializeField] float OffsetY = 0;
+    [SerializeField] bool movingCamera;
     [SerializeField] bool movingUpCamera;
 
     private Vector3 cameraPos;

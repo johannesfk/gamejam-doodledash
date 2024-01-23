@@ -83,7 +83,6 @@ public class PlayerController : MonoBehaviour
         gravityScale = rb.gravityScale;
         isJumping = false;
         hasWon = false;
-
     }
 
 
